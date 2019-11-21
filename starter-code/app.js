@@ -6,7 +6,7 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 
 const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI(process.env.CLIENT_SECRET);
+const newsapi = new NewsAPI('d79e3bc5963748c0a667349902211304');
 
 
 
@@ -73,17 +73,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-newsapi.v2.everything({
-  q: "macbook pro"
-}).then(response => {
-  console.log("api res DE", response);
-  /*
-    {
-      status: "ok",
-      articles: [...]
-    }
-  */
-});
+
 
 // var url = 'https://newsapi.org/v2/top-headlines?' +
 //           'country=us&' +

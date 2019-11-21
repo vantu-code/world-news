@@ -1,3 +1,7 @@
+
+<body>
+  
+
 <h1>Main page</h1>
 <a href="/profile">Profile</a>
 <div><img src="https://media1.giphy.com/media/d10dMmzqCYqQ0/giphy.gif" alt=""></div>
@@ -6,4 +10,17 @@
   <a href="/logout">
     <button style="background: red;">Logout</button>
   </a>
+
+  <form action='/home' method='POST'>
   
+  <label for=''>What do you want??</label>
+  <input type='text' name='search'>
+  
+  <button type='submit'>Submit</button>
+  </form>
+
+
+{{#each articles}}
+{{> articleCard this}}
+{{/each}}
+</body>

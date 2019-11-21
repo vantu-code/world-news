@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+const articleRouter = require('./article');
+const favoritesRouter = require('./favorites');
+const profileRouter = require('./profile');
+
 
 
 
@@ -19,13 +23,35 @@ router.use((req, res, next) => {
 //     V
 
 router.get("/home", (req, res, next) => {
+
   res.render("home");
 });
 
-router.get("/secret/two", (req, res, next) => {
-  res.render("private");
+router.post("/home", (req, res, next) => {
+
+  newsapi.v2.everything({
+    q: (req.query)
+  }).then(response => {
+    console.log("api res DE", response);
+    /*
+      {
+        status: "ok",
+        articles: [...]
+      }
+    */
+  }); 
+  res.render("home", { articles: response});
 });
 
+
+// *  '/article'
+router.use('/article', articleRouter);
+
+// *  '/favorites'
+router.use('/favorites', favoritesRouter);
+
+// *  '/profile'
+router.use('/profile', profileRouter);
 
 
 module.exports = router;
