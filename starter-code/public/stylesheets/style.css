@@ -1,0 +1,105 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* public/stylesheet/style.css */
+#form {
+  margin: 30px auto;
+  width: 380px;
+}
+
+#form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+#form input,
+#form button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 50%;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+
+button {
+  background: #43e68c77;
+  border: 1px solid #4b4c4d;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 50%;
+  text-align: center;
+  margin: 0 25% auto;
+}
+
+button:hover {
+  background: #fff;
+  color: #7e858a;
+  transition: .3s ease background;
+}
+
+.error-message {
+  background: #F02B63;
+  box-sizing: border-box;
+  color: #fff;
+  margin: 20px auto;
+  padding: 20px;
+  width: 50%;
+}
+#container{
+width: 100%;
+display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: center;
+}
+.title{
+  width: 50%;
+  margin: 0 25% auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .login-title{
+    margin: 0 auto;
+    text-align: center;
+  }
+  .signup-form{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .signup-title{
+    margin: 0 auto;
+    text-align: center;
+  }
+  .layout-title{
+    width:100%;
+    text-align: center;
+  }
