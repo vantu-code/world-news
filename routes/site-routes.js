@@ -17,6 +17,8 @@ router.use((req, res, next) => {
 // 		 ------------------------------------  
 //     | 
 //     V
+console.log('hola');
+
 
 router.get("/home", (req, res, next) => {
   res.render("home");
