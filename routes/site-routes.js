@@ -38,10 +38,11 @@ router.post("/home", (req, res, next) => {
   var articleSearch = req.body.search;
   
   newsapi.v2.everything({
-    q: (articleSearch),
-    sortBy: 'relevancy',
+    //q: (articleSearch),
+    domains: (articleSearch),
+    // sortBy: 'relevancy',
   }).then(response => {
-    console.log("api res DE", response.articles[0].source.name);
+    console.log("api res DE", response.articles[0]);
     /*
       {
         status: "ok",
