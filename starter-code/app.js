@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
+const hbs = require('hbs');
 
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('d79e3bc5963748c0a667349902211304');
@@ -20,6 +21,8 @@ var siteRouter = require('./routes/site-routes');
 
 var app = express();
 
+
+
 mongoose.connect('mongodb://localhost:27017/basic-auth-demo', {
   useNewUrlParser: true,
 });
@@ -34,6 +37,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+hbs.registerPartials(__dirname + '/views/partials')
 
 // Before the routes
 // SESSION ( & COOKIES ) MIDDLEWARE   -- req.session.currentUser
