@@ -23,7 +23,7 @@ var app = express();
 
 
 
-mongoose.connect('mongodb://localhost:27017/basic-auth-demo', {
+mongoose.connect('mongodb://localhost:27017/world-news', {
   useNewUrlParser: true,
 });
 

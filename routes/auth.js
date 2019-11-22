@@ -1,5 +1,4 @@
 var express = require('express');
-const zxcvbn = require('zxcvbn');
 const User = require('./../models/User');
 
 var router = express.Router();
