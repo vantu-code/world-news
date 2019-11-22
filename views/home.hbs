@@ -6,4 +6,21 @@
   <a href="/logout">
     <button style="background: red;">Logout</button>
   </a>
+
+  <form action='/home' method='POST'>
   
+  <label for=''>What do you want??</label>
+  <input type='text' name='search'>
+  
+  <button type='submit'>Submit</button>
+  </form>
+
+<div>
+  {{!-- <h1>{{articles.0.title}}</h1>
+   --}}
+{{#each articles}}
+{{> articleCard this}}
+{{/each}}
+
+</div>
+</body>

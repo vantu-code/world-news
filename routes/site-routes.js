@@ -24,8 +24,25 @@ router.get("/home", (req, res, next) => {
   res.render("home");
 });
 
-router.get("/secret/two", (req, res, next) => {
-  res.render("private");
+router.post("/home", (req, res, next) => {
+  console.log("req", req.body.search);
+  var articleSearch = req.body.search;
+  
+  newsapi.v2.everything({
+    //q: (articleSearch),
+    domains: (articleSearch),
+    // sortBy: 'relevancy',
+  }).then(response => {
+    console.log("api res DE", response.articles[0]);
+    /*
+      {
+        status: "ok",
+        articles: [...]
+      }
+    */
+   res.render("home", { articles: response.articles})
+  }); 
+  
 });
 
 
