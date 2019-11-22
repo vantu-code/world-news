@@ -1,0 +1,57 @@
+
+
+
+<article class="article-card">
+
+  <form action='/endPointName' method='POST'>
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='Title' placeholder="{{this.title}}">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='Author' placeholder="{{this.author}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='Image' placeholder="{{this.urlToImage}}">
+
+     <label for=''></label>
+     <input type='text' style="display:none;" name='Article' placeholder="{{this.content}}">
+   
+     <button type='submit'><h1>{{this.title}}</h1></button>
+     <button type='submit'><img src={{this.urlToImage}} alt=""></button>
+     <button type='submit'><h2>{{this.author}}</h2></button>
+     <button type='submit'><h2> source: {{this.source.name}}</h2></button>
+     <button type='submit'><p>{{this.description}}</p></button>
+   </form>
+
+
+  {{!-- <h1>{{this.title}}</h1>
+   <img src={{this.urlToImage}} alt="">
+   <h2>{{this.author}}</h2>
+   <h2> source: {{this.source.name}}</h2>
+   <p>{{this.description}}</p>
+    --}}
+   <form action='/endPointName' method='POST'>
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='Title' placeholder="{{this.title}}">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='Author' placeholder="{{this.author}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='Image' placeholder="{{this.urlToImage}}">
+
+     <label for=''></label>
+     <input type='text' style="display:none;" name='Article' placeholder="{{this.content}}">
+   
+     <button type='submit'>Add to favorites</button>
+   </form>
+
+
+   <a href="/favorites/add/"></a>
+   <hr>
+
+   
+   
+</article>
