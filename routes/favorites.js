@@ -7,4 +7,5 @@ router.get('/:userId', (req, res, next) => {
   res.render('favorites');
 });
 
+
 module.exports = router;
