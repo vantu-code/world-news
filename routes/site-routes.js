@@ -33,9 +33,26 @@ console.log('hola');
 
 
 router.get("/home", (req, res, next) => {
-
-  res.render("home");
-});
+  const {_id} = req.session.currentUser
+  User.findById(_id)
+  .then((user) => {
+    if(user.queries){
+    var randomQueryId = user.queries[Math.floor(Math.random()*user.queries.length)]
+    Query.findById(randomQueryId)
+    .then((query) => {
+    newsapi.v2.everything({
+      q: (query.query),
+      sortBy: 'relevancy',
+    }).then(response => {
+    res.render("home", {articles: response.articles, query: query.query})
+    })
+  })
+}
+else{
+  res.render("home")
+}
+ });
+})
 
 // router.post("/home", (req, res, next) => {
 //   //console.log("req", req.body.search);
@@ -60,33 +77,22 @@ router.get("/home", (req, res, next) => {
 
 
 router.post("/home", (req, res, next) => {
-  //console.log("req", req.body.search);
+
   var articleSearch = req.body.search;
   Query.create ({
     query: articleSearch,
   })  .then((result) => {
-  
     const queryId = result._id;
     const {_id} = req.session.currentUser;
     User.findOneAndUpdate(_id)
     .then((user) => {
       user.queries.push(queryId);
       user.save()
-      console.log("user from user", user)
-        console.log("articleSearch", articleSearch);
-        
         newsapi.v2.everything({
           q: (articleSearch),
           sortBy: 'relevancy',
         }).then(response => {
-          //console.log("api res DE", response.articles[0]);
-          /*
-            {
-              status: "ok",
-              articles: [...]
-            }
-          */
-        res.render("home", {articles: response.articles})
+        res.render("home", {articles: response.articles, query: articleSearch})
         });
   })
 }).catch((err) => {
