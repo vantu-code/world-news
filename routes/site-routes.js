@@ -3,6 +3,7 @@ var router = express.Router();
 
 const User = require('./../models/User');
 const Favorite = require('./../models/Favorite');
+const Query = require('./../models/Query');
 
 const articleRouter = require('./article');
 const favoritesRouter = require('./favorites');
@@ -36,26 +37,62 @@ router.get("/home", (req, res, next) => {
   res.render("home");
 });
 
+// router.post("/home", (req, res, next) => {
+//   //console.log("req", req.body.search);
+//   var articleSearch = req.body.search;
+  
+//   newsapi.v2.everything({
+//     q: (articleSearch),
+//     sortBy: 'relevancy',
+//   }).then(response => {
+//     //console.log("api res DE", response.articles[0]);
+//     /*
+//       {
+//         status: "ok",
+//         articles: [...]
+//       }
+//     */
+//    res.render("home", {articles: response.articles})
+//   }); 
+  
+// });
+
+
+
 router.post("/home", (req, res, next) => {
   //console.log("req", req.body.search);
   var articleSearch = req.body.search;
+  Query.create ({
+    query: articleSearch,
+  })  .then((result) => {
   
-  newsapi.v2.everything({
-    q: (articleSearch),
-    sortBy: 'relevancy',
-  }).then(response => {
-    //console.log("api res DE", response.articles[0]);
-    /*
-      {
-        status: "ok",
-        articles: [...]
-      }
-    */
-   res.render("home", {articles: response.articles})
-  }); 
-  
+    const queryId = result._id;
+    const {_id} = req.session.currentUser;
+    User.findOneAndUpdate(_id)
+    .then((user) => {
+      user.queries.push(queryId);
+      user.save()
+      console.log("user from user", user)
+        console.log("articleSearch", articleSearch);
+        
+        newsapi.v2.everything({
+          q: (articleSearch),
+          sortBy: 'relevancy',
+        }).then(response => {
+          //console.log("api res DE", response.articles[0]);
+          /*
+            {
+              status: "ok",
+              articles: [...]
+            }
+          */
+        res.render("home", {articles: response.articles})
+        });
+  })
+}).catch((err) => {
+  console.log(err);
 });
-
+  });
 
 router.post("/home/add-to-favorite", (req, res, next) => {
   console.log("favorite", req.body);
@@ -63,7 +100,7 @@ router.post("/home/add-to-favorite", (req, res, next) => {
   var title = req.body.title;
   var author = req.body.author;
   var image = req.body.image;
-  var content = req.body.content;
+  var content = req.body.article;
   var url = req.body.url;
 
   Favorite.create ({

@@ -32,7 +32,8 @@ function pushFavorite(favortieFromDB, user){
     author: favortieFromDB.author,
     image: favortieFromDB.image,
     content: favortieFromDB.content,
-    url: favortieFromDB.url
+    url: favortieFromDB.url,
+    id:  favortieFromDB._id
     }); 
       if (favoritesArray.length == user.favorites.length){
         //console.log("favorties", favoritesArray[0]);
@@ -45,6 +46,8 @@ router.get('/', (req, res, next) => {
   const {_id} = req.session.currentUser;
   User.findById(_id)
   .then((user) => {
+    // console.log("from objectId", user.favorites.title);
+    
     user.favorites.forEach((favorite)=>{
       Favorite.findById(favorite)
       .then((favortieFromDB) => {
@@ -63,6 +66,26 @@ router.get('/', (req, res, next) => {
 });
 
 
+
+router.get('/delete/:favoriteId', (req, res ,next)=>{
+  console.log("current fav", req.params.favoriteId);
+  var currentFav = req.params.favoriteId;
+  const {_id} = req.session.currentUser;
+  User.findById(_id)
+  .then((user) => {
+    var filteredArr = user.favorites.filter(function(el){
+      return el != currentFav;  
+    })
+    user.favorites = [...filteredArr]
+    user.save()
+    console.log("works", user.favorites);
+    res.redirect('/home');
+  })
+.catch((err) => {
+  console.log(err);
+  
+});
+})
 
 
 module.exports = router;
