@@ -8,6 +8,7 @@ const Query = require('./../models/Query');
 const articleRouter = require('./article');
 const favoritesRouter = require('./favorites');
 const profileRouter = require('./profile');
+const adminRouter = require('./admin');
 
 
 const NewsAPI = require('newsapi');
@@ -36,7 +37,7 @@ router.get("/home", (req, res, next) => {
   const {_id} = req.session.currentUser
   User.findById(_id)
   .then((user) => {
-    if(user.queries){
+    if(user.queries.length > 0){
     var randomQueryId = user.queries[Math.floor(Math.random()*user.queries.length)]
     Query.findById(randomQueryId)
     .then((query) => {
@@ -147,5 +148,8 @@ router.use('/favorites', favoritesRouter);
 // *  '/profile'
 router.use('/profile', profileRouter);
 
+
+// *  '/admin'
+router.use('/admin', adminRouter);
 
 module.exports = router;
