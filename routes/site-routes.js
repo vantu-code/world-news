@@ -39,6 +39,7 @@ router.get("/home", (req, res, next) => {
   .then((user) => {
     if(user.queries.length > 0){
     var randomQueryId = user.queries[Math.floor(Math.random()*user.queries.length)]
+    
     Query.findById(randomQueryId)
     .then((query) => {
     newsapi.v2.everything({
@@ -82,10 +83,10 @@ router.post("/home", (req, res, next) => {
   var articleSearch = req.body.search;
   Query.create ({
     query: articleSearch,
-  })  .then((result) => {
+  }).then((result) => {
     const queryId = result._id;
     const {_id} = req.session.currentUser;
-    User.findOneAndUpdate(_id)
+    User.findById(_id)
     .then((user) => {
       user.queries.push(queryId);
       user.save()
@@ -109,23 +110,27 @@ router.post("/home/add-to-favorite", (req, res, next) => {
   var image = req.body.image;
   var content = req.body.article;
   var url = req.body.url;
+  var source = req.body.source;
 
   Favorite.create ({
     title,
     author,
     image,
     content,
-    url
+    url,
+    source
   })
   .then((result) => {
-  
     const articleId = result._id;
     const {_id} = req.session.currentUser;
-    User.findOneAndUpdate(_id)
+    User.findById(_id)
     .then((user) => {
       user.favorites.push(articleId);
       user.save();
       console.log("user from user", user)
+      // res.redirect("/home");
+      res.status(201)
+      // .res.Json()
     }).catch((err) => {
       
     });
@@ -133,8 +138,6 @@ router.post("/home/add-to-favorite", (req, res, next) => {
     console.log(err)
   });
   // console.log("let's see", newArticle);
-  
-  // res.render("home");
 })
 
 

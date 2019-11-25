@@ -29,7 +29,7 @@
 
 
 
-   <form action='/home/add-to-favorite' method='POST'>
+   <form class="favorite-form" method='POST'>
    
      <label for=''></label>
      <input type='text'  style="display:none;" name='title' value="{{this.title}}">
@@ -43,10 +43,13 @@
      <label for=''></label>
      <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
 
+         <label for=''></label>
+     <input type='text'  style="display:none;" name='source' value="{{this.source.name}}">
+
      <label for=''></label>
      <input type='text' style="display:none;" name='article' value="{{this.content}}">
    
-     <button type='submit'>Add to favorites</button>
+     <button class="{{this.index}}add-to-favorite"  type='submit'>Add to favorites</button>
    </form>
 
    <hr>
