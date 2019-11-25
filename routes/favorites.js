@@ -74,20 +74,21 @@ router.get('/', (req, res, next) => {
   const {_id} = req.session.currentUser;
   User.findById(_id)
   .then((user) => {
-    // console.log("from objectId", user.favorites.title);
-    
-    user.favorites.forEach((favorite)=>{
-      Favorite.findById(favorite)
-      .then((favortieFromDB) => {
-        var fromFunc = pushFavorite(favortieFromDB, user);
-        if(fromFunc){
-        res.render('favorites', {favorites: fromFunc});
-        //console.log("inside", fromFunc)
-        }
-      }).catch((err) => {
-        console.log(err);
-      });
-    })
+    if(user.favorites.length){
+      user.favorites.forEach((favorite)=>{
+        Favorite.findById(favorite)
+        .then((favortieFromDB) => {
+          var fromFunc = pushFavorite(favortieFromDB, user);
+          if(fromFunc){
+            res.render('favorites', {favorites: fromFunc});
+          }
+        }).catch((err) => {
+          console.log(err);
+        });
+      })
+    } else {
+      res.render('favorites')
+    }
   })
   .catch((err) => {
   });

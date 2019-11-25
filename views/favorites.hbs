@@ -4,7 +4,12 @@
 
 
 
-
+{{#if favorites.length}}
 {{#each favorites}}
 {{> favoritesCard this}}
 {{/each}}
+
+
+{{else}}
+<h1>nothing to show</h1>
+{{/if}}

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 const User = require('./../models/User');
 const Favorite = require('./../models/Favorite');
 const Query = require('./../models/Query');

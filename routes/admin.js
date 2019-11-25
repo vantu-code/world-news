@@ -10,11 +10,6 @@ const favoritesRouter = require('./favorites');
 const profileRouter = require('./profile');
 
 
-// var array = ["no", "no", "yes", "maybe", "today", "no", "yes", "tommorow", "blue", "green", "green", "blue", "green", "orange", "yes"];
-
-
-
-
 
 
 router.get('/', (req, res, next) => {
@@ -33,8 +28,7 @@ for (let j = i+1; j< array.length; j++){
   if (array[i].query == array[j].query){
     count++
     array.splice(j,1)
-  }
-  }
+  }}
   objArray.push({
       query: array[i].query,
       numberOfTimes: count
@@ -47,11 +41,9 @@ objArray.sort((a, b) => (a.numberOfTimes > b.numberOfTimes) ? -1 : 1)
       User.find()
       .then((users)=>{
     res.render('admin', {queries: objArray, favorites: favorites, users: users});
-  })
-  })
+  })})
   }).catch((err) => {
     console.log(err);
-    
   });
 }
 else {
