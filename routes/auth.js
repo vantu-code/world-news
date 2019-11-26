@@ -1,5 +1,4 @@
 var express = require('express');
-const zxcvbn = require('zxcvbn');
 const User = require('./../models/User');
 
 var router = express.Router();
@@ -96,8 +95,13 @@ router.post('/login', (req, res, next) => {
       if (passwordCorrect) {
         // Save the login in the session ( and create cookie )
         // And redirect the user
-        req.session.currentUser = userData;
-        res.redirect('/home');
+        if (username == 'Admin') {
+          req.session.currentUser = userData;
+          res.redirect('/admin');
+        } else {
+          req.session.currentUser = userData;
+          res.redirect('/home');
+        }
       }
 
       // Else - if password incorrect - return error

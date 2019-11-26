@@ -1,15 +1,16 @@
+<div id="container">
 <h1 class="signup-title">Sign up</h1>
-<form class="signup-form" action='/auth/signup' method='POST'>
+  <form class="signup-form" action='/auth/signup' method='POST'>
 
-  <label for=''>Username</label>
-  <input type='text' name='username'>
+    <label for=''>Username</label>
+    <input type='text' name='username'>
 
-  <label for=''>Password</label>
-  <input type='password' name='password'>
+    <label for=''>Password</label>
+    <input type='password' name='password'>
 
-  <button type='submit'>Submit</button>
-</form>
-
+    <button type='submit'>Submit</button>
+  </form>
+</div>
 {{!-- error message display --}} 
 
 {{#if errorMessage}}
