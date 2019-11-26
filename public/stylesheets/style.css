@@ -1,6 +1,8 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
+  background-color:#fff;
+  
 }
 
 a {
@@ -8,6 +10,13 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size:1rem;
+}
+
+h2 {
+  font-size:0.7rem;
+}
 /* public/stylesheet/style.css */
 #form {
   margin: 30px;
@@ -23,7 +32,7 @@ a {
 }
 
 #form input,
-#form button {
+#form {
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
@@ -39,16 +48,14 @@ button {
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 14px;
-  padding: 8px 10px;
+  /* padding: 8px 10px; */
   text-decoration: none;
   text-transform: uppercase;
   transition: .3s ease background;
- 
-  margin:0 auto;
   text-align: center;
- 
+
 }
 
 button:hover {
@@ -65,18 +72,31 @@ button:hover {
   padding: 20px;
   width: 50%;
 }
-#container{
+/* #container{
 width: 100%;
 display: flex;
 align-content: center;
 justify-content: center;
 margin:0 auto;
+min-height:100vh;
+flex-direction: column;
 }
+
+#container a, p{
+  display:flex;
+  align-items: center;
+  margin:10px auto;
+} */
+
+
 .title{
   width: 50%;
   margin: 0 25% auto;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  align-items:center;
+  flex-direction: column;
 }
 
 .login-form{
@@ -107,20 +127,33 @@ margin:0 auto;
   }
 
   nav {
+    padding-top:10px;
+   margin-bottom:15px;
+   background-color:white;
+  }
+
+  .navbar {
+    padding:1rem;
+  }
+
+  /* nav {
     height:15vh;
     background-color:cornflowerblue;
     display: flex;
     align-items: center;
     padding-right:45px;
     justify-content: flex-end;
+    position:fixed;
+    top:0;
+    width:100%;
   }
   
   nav li {
     display: flex;
     flex-direction: row;
     display: inline;
-    padding:0px 10px 0px 10px;
-  }
+    padding:0px 12px 0px 12px;
+  } */
 
  #logo {
     justify-content: flex-start;
@@ -129,27 +162,32 @@ margin:0 auto;
   }
 
   #form-container {
-    background-color:rgba(70, 64, 64, 0.178);
-    padding:20px 60px 20px 60px;
-    width:40%;
-    display: flex;
+    margin:0 auto;
+   width:40%;
+   justify-content:center;
+   
+    /* display: flex;
     justify-content: center;
-    margin:40px auto;
+    margin:40px 80px; */
   }
+.form-inline{
+  flex-flow:row nowrap;
+}
 
   #search-form {
     display: flex;
     justify-content: center;
     flex-direction:row;
-    width:20%;
-    text-align:center;
-    margin:40px auto;
+    width:95%;
+    text-align:left;
+    margin:10px auto;
   }
 
   #search-form label {
     width:100%;
     align-items: center;
     display: flex;
+    text-align:center;
   }
 
   #search-form input {
@@ -160,24 +198,80 @@ margin:0 auto;
   img {
     display:block;
     margin:0 auto;
-    width: 70%;
+    width: 100%;
+    max-height:460px;
+    min-height:150px;
+    max-width:260px;
+    min-width:100px;
   }
 
   article {
     text-align:center;
   }
 
+  .article-card {
+    background-color:#fff;
+    padding: 10px 20px 20px 20px;
+    margin:0px auto;
+    width:90%;
+    min-height:39vh;
+    /* box-shadow:3px 3px 3px 0px rgba(121, 119, 119, 0.75); */
+  }
+
+  .container {
+    border-bottom:1px solid grey;
+  }
+
  
   footer {
     height:10vh;
-    background-color:cornflowerblue;
+    background-color:#212121;
     display: flex;
     align-items: center;
     color:white;
     text-align: center;
+    
   }
 
   footer p {
     text-align:center;
     margin:0 auto;
   }
+
+  
+
+  .icon {
+    display:none;
+    padding-right:35px;
+    font-size:20px;
+  }
+
+#logout {
+  padding-right:20px;
+}
+
+.article-btns {
+  background-color:rgba(21, 68, 156, 0.685);
+}
+
+
+
+/* 
+  @media screen and (max-width: 600px) {
+    nav li{display: none;}
+    nav .icon {display:block;}
+  }
+
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {display:flex; flex-wrap:wrap; justify-content: space-between;align-items:center;}
+    .topnav.responsive a.icon {
+     order:1;
+      color:black;
+    }
+    .topnav.responsive li  {
+     width:100%;
+      display: none;
+      text-align: center;
+      background-color: black;
+    }
+  } */

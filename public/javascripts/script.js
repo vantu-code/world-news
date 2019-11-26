@@ -1,5 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 
-  console.log('IronGenerator JS imported successfully!');
+var menu = document.getElementById("menu");
 
-}, false);
+menu.addEventListener('click', myFunction);
+

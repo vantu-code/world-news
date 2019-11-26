@@ -1,13 +1,54 @@
 
 
 
-<article class="article-card">
+<article class="article-card container">
 
-  <h1>{{this.title}}</h1>
-   <img src={{this.urlToImage}} alt="">
-   <h2>By {{this.author}}</h2>
-   <h2> Source: {{this.source.name}}</h2>
-   <p>{{this.description}}</p>
-   <hr>
+  <form action='/article' method='POST' style="margin:0px">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='title' value="{{this.title}}">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='author' value="{{this.author}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='url' value="{{this.url}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='article' value="{{this.content}}">
+   
+     <button class="article-btns" type='submit'><h1>{{this.title}}</h1></button>
+     <button class="article-btns" style="width: 30%;display: inline; float: left; cursor:pointer" type='submit'><img style="width:100%; cursor:pointer;padding:0;" src={{this.urlToImage}} alt=""></button>
+     <button class="article-btns" type='submit'><h2>{{this.author}}</h2></button>
+     <button class="article-btns" type='submit'><span> source: {{this.source.name}}</span></button>
+     <button class="article-btns" style="max-width:50%;" type='submit'><p >{{this.description}}</p></button>
+   </form>
+
+   <form action='/home/add-to-favorite' method='POST'>
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='title' value="{{this.title}}">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='author' value="{{this.author}}">
+
+    <label for=''></label>
+     <input type='text'  style="display:none;" name='url' value="{{this.url}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
+
+     <label for=''></label>
+     <input type='text' style="display:none;" name='article' value="{{this.content}}">
+   
+     <button type='submit'>Add to favorites</button>
+   </form>
+
+ 
+
+   
    
 </article>
