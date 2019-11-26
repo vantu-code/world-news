@@ -3,12 +3,57 @@
 
 <article class="article-card">
 
-  <h1>{{this.title}}</h1>
-   <img src={{this.urlToImage}} alt="">
-   <h2>By {{this.author}}</h2>
-   <h2> Source: {{this.source.name}}</h2>
-   <p>{{this.description}}</p>
-   <a href="/favorites/add/{{this.url}}">Add to favorites</a>
+  <form action='/article' method='POST'>
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='title' value="{{this.title}}">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='author' value="{{this.author}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='url' value="{{this.url}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='article' value="{{this.content}}">
+   
+     <button type='submit'><h1>{{this.title}}</h1></button>
+     <button type='submit'><img src={{this.urlToImage}} alt=""></button>
+     <button type='submit'><h2>{{this.author}}</h2></button>
+     <button type='submit'><h2> source: {{this.source.name}}</h2></button>
+     <button type='submit'><p>{{this.description}}</p></button>
+   </form>
+
+
+
+   <form class="favorite-form" method='POST'>
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='title' value="{{this.title}}">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='author' value="{{this.author}}">
+
+    <label for=''></label>
+     <input type='text'  style="display:none;" name='url' value="{{this.url}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
+
+         <label for=''></label>
+     <input type='text'  style="display:none;" name='source' value="{{this.source.name}}">
+
+     <label for=''></label>
+     <input type='text' style="display:none;" name='article' value="{{this.content}}">
+   
+     <button class="{{this.index}}add-to-favorite"  type='submit'>Add to favorites</button>
+   </form>
+
    <hr>
+
+   
    
 </article>

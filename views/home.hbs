@@ -8,6 +8,8 @@
   </nav>
 </header>
 <body>
+  <h1>results for {{query}}</h1>
+  <h1 class="layout-title">World news</h1>
   <div id="form-container">
     <form id="search-form" action='/home' method='POST'>
     
@@ -18,11 +20,8 @@
     </form>
   </div>
 <div>
-  {{!-- <h1>{{articles.0.title}}</h1>
---}}
+  {{!-- <h1>{{articles.0.title}}</h1>--}}
 {{#each articles}}
 {{> articleCard this}}
 {{/each}}
 
-</div>
-</body>

@@ -4,13 +4,12 @@ body {
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
+  color: #00B7FF;
 }
 
 /* public/stylesheet/style.css */
 #form {
-  margin: 30px;
+  margin: 30px auto;
   width: 380px;
 }
 
@@ -19,7 +18,7 @@ a {
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
-  width: 100%;
+  width: 50%;
 }
 
 #form input,
@@ -27,28 +26,27 @@ a {
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
-  padding: 10px;
-  
+  padding: 4px;
+  width: 50%;
   margin-bottom: 20px;
   border: 2px solid black;
 }
 
 button {
-  background: cornflowerblue;
-  border: none;
+  background: #43e68c77;
+  border: 1px solid #4b4c4d;
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
-  padding: 8px 10px;
+  padding: 8px 16px;
   text-decoration: none;
   text-transform: uppercase;
   transition: .3s ease background;
- 
-  margin:0 auto;
+  width: 50%;
   text-align: center;
- 
+  margin: 0 25% auto;
 }
 
 button:hover {
@@ -68,9 +66,9 @@ button:hover {
 #container{
 width: 100%;
 display: flex;
+flex-direction: column;
 align-content: center;
 justify-content: center;
-margin:0 auto;
 }
 .title{
   width: 50%;
@@ -111,8 +109,7 @@ margin:0 auto;
     background-color:cornflowerblue;
     display: flex;
     align-items: center;
-    padding-right:45px;
-    justify-content: flex-end;
+    padding-left:25px;
   }
   
   nav li {
@@ -122,62 +119,12 @@ margin:0 auto;
     padding:0px 10px 0px 10px;
   }
 
- #logo {
-    justify-content: flex-start;
-    display:flex;
-    padding-left:40px;
-  }
-
-  #form-container {
-    background-color:rgba(70, 64, 64, 0.178);
-    padding:20px 60px 20px 60px;
-    width:40%;
-    display: flex;
-    justify-content: center;
-    margin:40px auto;
-  }
-
   #search-form {
     display: flex;
     justify-content: center;
-    flex-direction:row;
-    width:20%;
-    text-align:center;
-    margin:40px auto;
+    display: block;
   }
 
-  #search-form label {
-    width:100%;
-    align-items: center;
-    display: flex;
-  }
+  #search-form {
 
-  #search-form input {
-    width:100vw;
-    margin: 0px 20px 0px 20px;
-  }
-
-  img {
-    display:block;
-    margin:0 auto;
-    width: 70%;
-  }
-
-  article {
-    text-align:center;
-  }
-
- 
-  footer {
-    height:10vh;
-    background-color:cornflowerblue;
-    display: flex;
-    align-items: center;
-    color:white;
-    text-align: center;
-  }
-
-  footer p {
-    text-align:center;
-    margin:0 auto;
   }

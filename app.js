@@ -6,6 +6,13 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 const hbs = require('hbs');
 
+
+
+var bodyParser = require('body-parser');
+
+
+
+
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('d79e3bc5963748c0a667349902211304');
 
@@ -37,6 +44,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 hbs.registerPartials(__dirname + '/views/partials')
 

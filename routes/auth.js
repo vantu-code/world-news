@@ -95,8 +95,15 @@ router.post('/login', (req, res, next) => {
       if (passwordCorrect) {
         // Save the login in the session ( and create cookie )
         // And redirect the user
+        if (username == "Admin"){
+          console.log("Yo Jon!");
+          req.session.currentUser = userData;
+          res.redirect('/admin');
+        }
+        else{
         req.session.currentUser = userData;
         res.redirect('/home');
+        }
       }
 
       // Else - if password incorrect - return error

@@ -1,1 +1,15 @@
 <h1>favorites</h1>
+<a href="/home">Home</a>
+<a href="/profile">Profile</a>
+
+
+
+{{#if favorites.length}}
+{{#each favorites}}
+{{> favoritesCard this}}
+{{/each}}
+
+
+{{else}}
+<h1>nothing to show</h1>
+{{/if}}

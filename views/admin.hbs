@@ -1,0 +1,15 @@
+<h1>admin</h1>
+
+{{!-- {{queries}} --}}
+<h1>Queries</h1>
+{{#each queries}}
+{{> queriesCard this}}
+{{/each}}
+<h1>Users</h1>
+{{#each users}}
+{{> usersCard this}}
+{{/each}}
+<h1>Favorites</h1>
+{{#each favorites}}
+{{> adminFavoriteCard this}}
+{{/each}}
