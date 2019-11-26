@@ -26,11 +26,11 @@
 <body>
  
 
-
+<h4>Hi {{user.username}}</h4>
  <h1>results for {{query}}</h1>
   
 <div>
-  {{!-- <h1>{{articles.0.title}}</h1>--}}
+
 {{#each articles}}
 {{> articleCard this}}
 {{/each}}

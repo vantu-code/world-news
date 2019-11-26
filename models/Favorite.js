@@ -6,7 +6,8 @@ const favoriteSchema = new Schema({
     author: String,
     image: String,
     content: String,
-    url: String
+    url: String,
+    source: String
 });
 
 const Favorite = mongoose.model('Favorite', favoriteSchema);

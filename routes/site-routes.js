@@ -47,7 +47,7 @@ router.get("/home", (req, res, next) => {
       q: (query.query),
       sortBy: 'relevancy',
     }).then(response => {
-    res.render("home", {articles: response.articles, query: query.query})
+    res.render("home", {articles: response.articles, query: query.query, user:user})
     })
   })
 }
@@ -95,7 +95,7 @@ router.post("/home", (req, res, next) => {
           q: (articleSearch),
           sortBy: 'relevancy',
         }).then(response => {
-        res.render("home", {articles: response.articles, query: articleSearch})
+        res.render("home", {articles: response.articles, query: articleSearch, user:user})
         });
   })
 }).catch((err) => {
@@ -104,7 +104,7 @@ router.post("/home", (req, res, next) => {
   });
 
 router.post("/home/add-to-favorite", (req, res, next) => {
-  console.log("favorite", req.body);
+  console.log("favorite", req.body.source);
   
   var title = req.body.title;
   var author = req.body.author;
