@@ -6,7 +6,12 @@ var logger = require('morgan');
 const mongoose = require('mongoose');
 const hbs = require('hbs');
 
+
+
 var bodyParser = require('body-parser');
+
+
+
 
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('d79e3bc5963748c0a667349902211304');
@@ -24,10 +29,10 @@ var siteRouter = require('./routes/site-routes');
 var app = express();
 
 
-
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
 });
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +43,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))

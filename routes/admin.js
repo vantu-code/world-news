@@ -9,15 +9,41 @@ const articleRouter = require('./article');
 const favoritesRouter = require('./favorites');
 const profileRouter = require('./profile');
 
+
+
+
 router.get('/', (req, res, next) => {
   // console.log("user", req.session.currentUser);
   const userName = req.session.currentUser.username;
   if (userName == "Admin"){
   Query.find()
   .then((queries) => {
-    res.render('admin', {queries: queries});
-  }).catch((err) => {
+    console.log("queries" ,queries);
     
+    var array = [...queries]
+    var objArray = [];
+for (let i = 0; i < array.length; i++){
+  count = 1
+for (let j = i+1; j< array.length; j++){
+  if (array[i].query == array[j].query){
+    count++
+    array.splice(j,1)
+  }}
+  objArray.push({
+      query: array[i].query,
+      numberOfTimes: count
+    })
+    array.splice(i,1)
+}
+objArray.sort((a, b) => (a.numberOfTimes > b.numberOfTimes) ? -1 : 1)
+    Favorite.find()
+    .then((favorites)=>{
+      User.find()
+      .then((users)=>{
+    res.render('admin', {queries: objArray, favorites: favorites, users: users});
+  })})
+  }).catch((err) => {
+    console.log(err);
   });
 }
 else {

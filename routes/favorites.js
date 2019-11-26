@@ -33,7 +33,8 @@ function pushFavorite(favortieFromDB, user){
     image: favortieFromDB.image,
     content: favortieFromDB.content,
     url: favortieFromDB.url,
-    id:  favortieFromDB._id
+    id:  favortieFromDB._id,
+    source: favortieFromDB.source
     }); 
       if (favoritesArray.length == user.favorites.length){
         //console.log("favorties", favoritesArray[0]);
@@ -41,30 +42,7 @@ function pushFavorite(favortieFromDB, user){
       }
     }
 
-// GET '/favorites'
-router.get('/', (req, res, next) => {
-  favoritesArray = [];
-  const {_id} = req.session.currentUser;
-  User.findById(_id)
-  .then((user) => {
-    // console.log("from objectId", user.favorites.title);
-    
-    user.favorites.forEach((favorite)=>{
-      Favorite.findById(favorite)
-      .then((favortieFromDB) => {
-        var fromFunc = pushFavorite(favortieFromDB, user);
-        if(fromFunc){
-        res.render('favorites', {favorites: fromFunc});
-        //console.log("inside", fromFunc)
-        }
-      }).catch((err) => {
-      });
-    })
-  })
-  .catch((err) => {
-  });
-  //res.render('favorites', favoritesArray[0]);
-});
+
 
 
 
@@ -80,13 +58,42 @@ router.get('/delete/:favoriteId', (req, res ,next)=>{
     user.favorites = [...filteredArr]
     user.save()
     console.log("works", user.favorites);
-    res.redirect('/home');
+    res.redirect('/favorites');
+
   })
 .catch((err) => {
   console.log(err);
   
 });
 })
+
+
+// GET '/favorites'
+router.get('/', (req, res, next) => {
+  favoritesArray = [];
+  const {_id} = req.session.currentUser;
+  User.findById(_id)
+  .then((user) => {
+    if(user.favorites.length){
+      user.favorites.forEach((favorite)=>{
+        Favorite.findById(favorite)
+        .then((favortieFromDB) => {
+          var fromFunc = pushFavorite(favortieFromDB, user);
+          if(fromFunc){
+            res.render('favorites', {favorites: fromFunc});
+          }
+        }).catch((err) => {
+          console.log(err);
+        });
+      })
+    } else {
+      res.render('favorites')
+    }
+  })
+  .catch((err) => {
+  });
+  //res.render('favorites', favoritesArray[0]);
+});
 
 
 module.exports = router;
