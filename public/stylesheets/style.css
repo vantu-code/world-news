@@ -277,3 +277,24 @@ flex-direction: column;
       background-color: black;
     }
   } */
+
+
+
+
+
+
+
+
+
+
+/* Jonathan edits admin */
+#admin-queries{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid black;
+}
+
+#one-query{
+border: 1px solid black;
+}

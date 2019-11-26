@@ -52,7 +52,11 @@ router.get("/home", (req, res, next) => {
   })
 }
 else{
-  res.render("home")
+  const {_id} = req.session.currentUser
+  User.findById(_id)
+  .then((user) => {
+  res.render("home", {user:user})
+})
 }
  });
 })
@@ -80,7 +84,10 @@ else{
 
 
 router.post("/home", (req, res, next) => {
-
+  if (req.body.search == ""){
+    redirect('/home');
+  }
+  else {
   var articleSearch = req.body.search;
   Query.create ({
     query: articleSearch,
@@ -101,6 +108,9 @@ router.post("/home", (req, res, next) => {
 }).catch((err) => {
   console.log(err);
 });
+
+
+  }
   });
 
 router.post("/home/add-to-favorite", (req, res, next) => {
