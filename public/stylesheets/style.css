@@ -195,7 +195,7 @@ flex-direction: column;
     margin: 0px 20px 0px 20px;
   }
 
-  img {
+  .article-img {
     display:block;
     margin:0 auto;
     width: 100%;
