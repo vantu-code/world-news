@@ -27,5 +27,24 @@ router.post('/', (req, res, next) => {
   });
 });
 
+router.post('/edit', (req, res, next) => {
+  const {_id} = req.session.currentUser;
+  var userFromForm = req.body.username;
+  var emailFromForm = req.body.email;
+  var catchPheaseFromForm = req.body.catchPhrase;
+console.log("reqqqqqq", req.body);
+
+  User.findById(_id)
+  .then((user) => {
+    user.username = userFromForm;
+    user.email = emailFromForm;
+    user.catchPhrase = catchPheaseFromForm;
+    console.log("user", user);
+    user.save()
+    res.redirect("/profile")
+  }).catch((err) => {
+    console.log(err);
+  });
+});
 
 module.exports = router;

@@ -27,7 +27,7 @@
      <button class="article-btns" style="max-width:50%;" type='submit'><p >{{this.description}}</p></button>
    </form>
 
-   <form action='/home/add-to-favorite' method='POST'>
+   <form class="favorite-form">
    
      <label for=''></label>
      <input type='text'  style="display:none;" name='title' value="{{this.title}}">
@@ -47,7 +47,7 @@
       <label for=''></label>
      <input type='text' style="display:none;" name='source' value="{{this.source.name}}">
    
-     <button type='submit'>Add to favorites</button>
+     <button class="add-to-favorite" type='submit'>Add to favorites</button>
    </form>
 
  

@@ -2,13 +2,48 @@ var addButton = document.getElementsByClassName('add-to-favorite');
 console.log(addButton);
 
 var favoriteFormArray = document.querySelectorAll('.favorite-form');
-var clearHistory= document.querySelectorAll('#clear-history');
+var clearHistory= document.getElementById('clear-history');
+var editProfile= document.getElementById('edit-profile');
 
-clearHistory.addEventListener("click", function (e){
-  e.preventDefault()
-    axios
-    .post('/profile')
-})
+var profileForm = document.getElementById('profile-form');
+var profileInputs = document.getElementsByClassName('profile-input');
+// var inputEmail = document.getElementById('edit-email');
+var submitProfileEdit = document.getElementById('submit-profile-edit')
+
+
+// submitProfileEdit.addEventListener("click", function (e){
+//   e.preventDefault()
+//     axios
+//     .post('/profile')
+// })
+
+// editProfile.addEventListener("click", function (e){
+
+//   console.log("edit");
+//   e.preventDefault()
+//   const inputFields = profileForm.querySelectorAll("input");
+//   const input = [...inputFields];
+
+//   const updatedProfile = {};
+  
+//   input.forEach(
+//     inputField => (updatedProfile[input.name] = inputField.value)
+//   )
+
+//   axios
+//   .patch(
+//     `/profile/${id}`, updatedProfile,)
+//   .then(response => {
+//     profileForm.reset()
+//   })
+
+// clearHistory.addEventListener("click", function (e){
+//   e.preventDefault()
+//     axios
+//     .post('/profile')
+// })
+// })
+
 
 
 

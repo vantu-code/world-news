@@ -129,9 +129,11 @@ router.post("/home/add-to-favorite", (req, res, next) => {
       user.favorites.push(articleId);
       user.save();
       console.log("user from user", user)
+      
+      res.status(201);
+      res.json();
       // res.redirect("/home");
-      res.status(201)
-      // .res.Json()
+      
     }).catch((err) => {
       
     });
