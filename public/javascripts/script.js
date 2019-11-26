@@ -6,6 +6,8 @@ var clearHistory= document.getElementById('clear-history');
 var editProfile= document.getElementById('edit-profile');
 
 var profileForm = document.getElementById('profile-form');
+var profileLines = document.getElementById('profile-lines');
+
 var profileInputs = document.getElementsByClassName('profile-input');
 // var inputEmail = document.getElementById('edit-email');
 var submitProfileEdit = document.getElementById('submit-profile-edit')
@@ -16,16 +18,46 @@ var submitProfileEdit = document.getElementById('submit-profile-edit')
 //     axios
 //     .post('/profile')
 // })
+console.log(favoriteFormArray[0]);
+for (let i = 0; i < addButton.length; i++) {
+  addButton[i].addEventListener("click", function (e){
+    console.log("event", e.target);
+    var title = favoriteFormArray[i].title.value;
+    var author = favoriteFormArray[i].author.value;
+    var image = favoriteFormArray[i].image.value;
+    var content = favoriteFormArray[i].article.value;
+    var url = favoriteFormArray[i].url.value;
+    var source = favoriteFormArray[i].source.value;  
+    e.preventDefault()
+    axios
+    .post('/home/add-to-favorite', {
+      title,
+      author,
+      image,
+      content,
+      url,
+      source
+    })
+    // document.querySelector('#layout-title').innerHTML = "yes";
+    console.log("yo bro")
+  })
+}
+
 
 editProfile.addEventListener("click", function (e){
   if(profileForm.style.display === 'block'){
-  profileForm.style.display = 'none'
+  profileForm.style.display = 'none';
+  profileLines.style.display = 'block';
+  editProfile.innerHTML = 'Edit profile';
   }
   else if(profileForm.style.display === 'none'){
-    profileForm.style.display = 'block'
+    profileForm.style.display = 'block';
+    profileLines.style.display = 'none';
+    editProfile.innerHTML = 'Cancel';
     }
 
 })
+
 
 //   console.log("edit");
 //   e.preventDefault()
@@ -65,30 +97,6 @@ editProfile.addEventListener("click", function (e){
 
 
 
-console.log(favoriteFormArray[0]);
-for (let i = 0; i < addButton.length; i++) {
-  addButton[i].addEventListener("click", function (e){
-    console.log("event", e.target);
-    var title = favoriteFormArray[i].title.value;
-    var author = favoriteFormArray[i].author.value;
-    var image = favoriteFormArray[i].image.value;
-    var content = favoriteFormArray[i].article.value;
-    var url = favoriteFormArray[i].url.value;
-    var source = favoriteFormArray[i].source.value;  
-    e.preventDefault()
-    axios
-    .post('/home/add-to-favorite', {
-      title,
-      author,
-      image,
-      content,
-      url,
-      source
-    })
-    // document.querySelector('#layout-title').innerHTML = "yes";
-    console.log("yo bro")
-  })
-}
 
 // addButton.forEach((button)=>{
 
