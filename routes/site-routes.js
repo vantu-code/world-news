@@ -84,8 +84,8 @@ else{
 
 
 router.post("/home", (req, res, next) => {
-  if (req.body.search == ""){
-    redirect('/home');
+  if (!req.body.search){
+    res.redirect("/home")
   }
   else {
   var articleSearch = req.body.search;

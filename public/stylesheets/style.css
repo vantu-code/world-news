@@ -288,13 +288,47 @@ flex-direction: column;
 
 
 /* Jonathan edits admin */
-#admin-queries{
+#admin-queries, #admin-users{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   border: 1px solid black;
+  border-radius: 5px;
+  height: 90px;
+  flex-wrap: wrap;
+  background-color: rgba(175, 182, 182, 0.267);
 }
 
-#one-query{
-border: 1px solid black;
+#one-query, #one-user{
+  box-shadow: 1px 2px rgba(94, 87, 87, 0.466);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  margin: 2px;
+  width: 50px;
+  border-radius: 5px;
+border: 1px solid rgba(153, 149, 149, 0.5);
+background-color: rgba(255, 228, 196, 0.336);
+}
+
+#admin-nav{
+  width: 100%;
+  text-align: center;
+  background-color: #656769a6;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+#admin-favorite{
+  background-color: rgb(175, 182, 182, 0.267);
+  border-radius: 5px;
+  margin: 5px 0;
+  font-size: 1em;
+  text-align: center;
+}
+#admin-title{
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 10px 0;
 }

@@ -12,6 +12,12 @@ var profileInputs = document.getElementsByClassName('profile-input');
 // var inputEmail = document.getElementById('edit-email');
 var submitProfileEdit = document.getElementById('submit-profile-edit')
 
+// var showMoreQueries = document.querySelectorAll('#admin-query-button')
+// var allQueries = document.getElementById('admin-queries')
+// var fiveQueries = document.getElementById('five-queries')
+
+
+
 
 // submitProfileEdit.addEventListener("click", function (e){
 //   e.preventDefault()
@@ -43,7 +49,6 @@ for (let i = 0; i < addButton.length; i++) {
   })
 }
 
-
 editProfile.addEventListener("click", function (e){
   if(profileForm.style.display === 'block'){
   profileForm.style.display = 'none';
@@ -57,6 +62,19 @@ editProfile.addEventListener("click", function (e){
     }
 
 })
+
+// showMoreQueries.addEventListener("click", function (e){
+//   if(allQueries.style.display == 'none'){
+//   allQueries.style.display = 'flex';
+//   fiveQueries.style.display = 'none';
+//   }
+//   else {
+//     allQueries.style.display = 'none';
+//     fiveQueries.style.display = 'flex';
+//     }
+// })
+
+
 
 
 //   console.log("edit");

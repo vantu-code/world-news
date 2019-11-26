@@ -36,6 +36,7 @@ for (let j = i+1; j< array.length; j++){
     array.splice(i,1)
 }
 objArray.sort((a, b) => (a.numberOfTimes > b.numberOfTimes) ? -1 : 1)
+objArray.splice(8)
     Favorite.find()
     .then((favorites)=>{
       User.find()
