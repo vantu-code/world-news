@@ -150,7 +150,7 @@ router.use('/article', articleRouter);
 router.use('/favorites', favoritesRouter);
 
 // *  '/profile'
-// router.use('/profile', profileRouter);
+router.use('/profile', profileRouter);
 
 
 // *  '/admin'
