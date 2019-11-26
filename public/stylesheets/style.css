@@ -6,7 +6,8 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #fff;
+  text-decoration: none;
 }
 
 h1 {
@@ -18,7 +19,7 @@ h2 {
 }
 /* public/stylesheet/style.css */
 #form {
-  margin: 30px auto;
+  margin: 30px;
   width: 380px;
 }
 
@@ -27,7 +28,7 @@ h2 {
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 
 #form input,
@@ -35,15 +36,15 @@ h2 {
   box-sizing: border-box;
   font-size: 14px;
   outline: 0;
-  padding: 4px;
-  width: 50%;
+  padding: 10px;
+  
   margin-bottom: 20px;
   border: 2px solid black;
 }
 
 button {
-  background: #43e68c77;
-  border: 1px solid #4b4c4d;
+  background: cornflowerblue;
+  border: none;
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
@@ -74,7 +75,6 @@ button:hover {
 /* #container{
 width: 100%;
 display: flex;
-flex-direction: column;
 align-content: center;
 justify-content: center;
 margin:0 auto;
