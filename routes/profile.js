@@ -14,4 +14,16 @@ router.get('/', (req, res, next) => {
   });
 });
 
-module.exports = router;
+router.post('/', (req, res, next) => {
+  const {_id} = req.session.currentUser;
+  User.findById(_id)
+  .then((user) => {
+    user.queries = [];
+    console.log("userrrrr favorites", user)
+    user.save()
+    res.status(201)
+  }).catch((err) => {
+    console.log(err);
+  });
+});
+
