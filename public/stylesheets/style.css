@@ -308,7 +308,7 @@ flex-direction: column;
   width: 50px;
   border-radius: 5px;
 border: 1px solid rgba(153, 149, 149, 0.5);
-background-color: rgba(255, 228, 196, 0.336);
+background-color: rgb(255, 255, 255);
 }
 
 #admin-nav{
