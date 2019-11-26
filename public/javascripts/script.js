@@ -1,4 +1,3 @@
-
 var addButton = document.getElementsByClassName('add-to-favorite');
 console.log(addButton);
 

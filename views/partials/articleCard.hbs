@@ -1,9 +1,9 @@
 
 
 
-<article class="article-card">
+<article class="article-card container">
 
-  <form action='/article' method='POST'>
+  <form action='/article' method='POST' style="margin:0px">
    
      <label for=''></label>
      <input type='text'  style="display:none;" name='title' value="{{this.title}}">
@@ -20,16 +20,14 @@
      <label for=''></label>
      <input type='text'  style="display:none;" name='article' value="{{this.content}}">
    
-     <button type='submit'><h1>{{this.title}}</h1></button>
-     <button type='submit'><img src={{this.urlToImage}} alt=""></button>
-     <button type='submit'><h2>{{this.author}}</h2></button>
-     <button type='submit'><h2> source: {{this.source.name}}</h2></button>
-     <button type='submit'><p>{{this.description}}</p></button>
+     <button class="article-btns" type='submit'><h1>{{this.title}}</h1></button>
+     <button class="article-btns article-img" style="width: 30%;display: inline; float: left; cursor:pointer" type='submit'><img style="width:100%; cursor:pointer;padding:0;" src="{{this.urlToImage}}" alt=""></button>
+     <button class="article-btns" type='submit'><h2>{{this.author}}</h2></button>
+     <button class="article-btns" type='submit'><span> source: {{this.source.name}}</span></button>
+     <button class="article-btns" style="max-width:50%;" type='submit'><p >{{this.description}}</p></button>
    </form>
 
-
-
-   <form class="favorite-form" method='POST'>
+   <form action='/home/add-to-favorite' method='POST'>
    
      <label for=''></label>
      <input type='text'  style="display:none;" name='title' value="{{this.title}}">
@@ -43,16 +41,13 @@
      <label for=''></label>
      <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
 
-         <label for=''></label>
-     <input type='text'  style="display:none;" name='source' value="{{this.source.name}}">
-
      <label for=''></label>
      <input type='text' style="display:none;" name='article' value="{{this.content}}">
    
-     <button class="{{this.index}}add-to-favorite"  type='submit'>Add to favorites</button>
+     <button type='submit'>Add to favorites</button>
    </form>
 
-   <hr>
+ 
 
    
    

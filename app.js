@@ -29,10 +29,10 @@ var siteRouter = require('./routes/site-routes');
 var app = express();
 
 
-
-mongoose.connect('mongodb://localhost:27017/world-news', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
 });
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
