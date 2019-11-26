@@ -26,9 +26,9 @@
 <h4>email: {{user.email}}</h4>
 <h4>Catch Phrase: {{user.catchPhrase}}</h4>
 
-<button id="edit-profile">Edit profile</button>
+<button  id="edit-profile">Edit profile</button>
 
-  <form id="profile-form" action='/profile/edit' method='POST'>
+  <form style="display:none" id="profile-form" action='/profile/edit' method='POST'>
 
     <label for=''>Username</label>
     <input class="profile-input" type='text' name='username' value={{user.username}}>
@@ -44,5 +44,5 @@
 
 {{!-- <button id="clear-history">Clear history</button> --}}
 <form method='POST'>
-  <button id="clear-history" type='submit'>Clear history</button>
+  <button id="clear-history" type='submit'>Clear query history</button>
 </form>

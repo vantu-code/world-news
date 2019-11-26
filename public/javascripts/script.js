@@ -17,7 +17,15 @@ var submitProfileEdit = document.getElementById('submit-profile-edit')
 //     .post('/profile')
 // })
 
-// editProfile.addEventListener("click", function (e){
+editProfile.addEventListener("click", function (e){
+  if(profileForm.style.display === 'block'){
+  profileForm.style.display = 'none'
+  }
+  else if(profileForm.style.display === 'none'){
+    profileForm.style.display = 'block'
+    }
+
+})
 
 //   console.log("edit");
 //   e.preventDefault()
