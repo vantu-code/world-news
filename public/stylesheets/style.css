@@ -251,7 +251,8 @@ flex-direction: column;
 }
 
 .article-btns {
-  background-color:rgba(21, 68, 156, 0.685);
+  background-color:#fff;
+  color:black;
 }
 
 
