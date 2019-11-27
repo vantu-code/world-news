@@ -18,12 +18,6 @@ var submitProfileEdit = document.getElementById('submit-profile-edit')
 
 
 
-
-// submitProfileEdit.addEventListener("click", function (e){
-//   e.preventDefault()
-//     axios
-//     .post('/profile')
-// })
 console.log(favoriteFormArray[0]);
 for (let i = 0; i < addButton.length; i++) {
   addButton[i].addEventListener("click", function (e){
@@ -57,6 +51,7 @@ $(document).ready(function () {
           $(".nav-link").css("color", "white");
           $(".btn-outline-success").css("color", "cornflowerblue");   
           $(".btn-outline-success").css("border-color", "cornflowerblue");   
+          $(".containers").css("background-image", "url('../images/One-news.png')");   
          
       } else {
           $(".navbar").css("background-color", "white");
