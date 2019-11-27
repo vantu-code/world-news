@@ -24,7 +24,7 @@ router.use('/signup', signupRouter);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Auth Demo' });
+  res.render('index', { title: 'One News' });
 });
 
 module.exports = router;
