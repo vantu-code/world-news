@@ -45,6 +45,7 @@ for (let i = 0; i < addButton.length; i++) {
       url,
       source
     })
+    clickSound.currentTime = 0;
     clickSound.play();
     
     addButton[i].style.display = 'none';
