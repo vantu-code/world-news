@@ -12,6 +12,7 @@ var profileInputs = document.getElementsByClassName('profile-input');
 // var inputEmail = document.getElementById('edit-email');
 var submitProfileEdit = document.getElementById('submit-profile-edit')
 var addFavorite = document.getElementsByClassName('add-to-favorite-hidden');
+var cancelProfileEdit = document.getElementById('edit-profile2');
 
 // var navbarImgLight = document.getElementById('colored-nav')
 // var navbarImgDark = document.getElementById('hidden-nav')
@@ -115,15 +116,20 @@ $(document).ready(function () {
 // });
 editProfile.addEventListener("click", function (e){
   
+
   if(profileForm.style.display === 'block'){
+    editProfile.style.display = 'block';
+    cancelProfileEdit.style.display = 'none';
   profileForm.style.display = 'none';
   profileLines.style.display = 'block';
-  editProfile.innerHTML = 'Edit profile';
+ 
   }
   else if(profileForm.style.display === 'none'){
+    editProfile.style.display = 'none';
+    cancelProfileEdit.style.display = 'block';
     profileForm.style.display = 'block';
     profileLines.style.display = 'none';
-    editProfile.innerHTML = 'Cancel';
+  
     }
     e.preventDefault()
 

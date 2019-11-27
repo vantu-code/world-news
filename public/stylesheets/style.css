@@ -193,6 +193,13 @@ a #container , p #container{
   flex-direction: column;
 }
 
+#profile-lines {
+  display:block;
+   margin-top:-50px;
+   color:white;
+  
+}
+
   /* nav {
     height:15vh;
     background-color:cornflowerblue;
@@ -296,6 +303,12 @@ a #container , p #container{
     min-height:100vh;
   }
 
+  .height-container2 {
+    min-height:77vh;
+    min-width: 100vw;
+    
+    background-color: rgb(81, 108, 148);
+  }
  
   footer {
     height:10vh;
@@ -355,7 +368,27 @@ a #container , p #container{
   max-height:50%;
 }
 
+#profile-form {
+  display:flex;
+  flex-direction:column;
+  color:white;
+}
 
+#profile-form input {
+  text-align:center;
+}
+
+#profile-form button {
+    border:1px solid white;
+    color:white;
+    margin-top:10px;
+}
+
+#edit-profile2 {
+  text-align:center;
+  margin:10px auto;
+  
+}
 
   @media screen and (max-width: 600px) {
     #form-container {display: none;}
