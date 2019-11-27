@@ -10,6 +10,8 @@ const favoritesRouter = require('./favorites');
 const profileRouter = require('./profile');
 
 
+var queryArray = [];
+var favoriteArray = [];
 
 
 router.get('/', (req, res, next) => {
@@ -41,8 +43,7 @@ objArray.splice(8)
     .then((favorites)=>{
       User.find()
       .then((users)=>{
-
-    res.render('admin', {queries: objArray, favorites: favorites, users: users});
+    res.render('admin', {queries: objArray, favorites: favorites, users: users});    
   })})
   }).catch((err) => {
     console.log(err);
@@ -53,4 +54,73 @@ else {
 }
 });
 
+function userDataQuery(actualQuery, userData){
+  queryArray.push(actualQuery.query)
+  if (queryArray.length == userData.queries.length){
+    //console.log("favorties", favoritesArray[0]);
+    return queryArray;
+  }
+}
+
+function userDataFavorite(actualFAvorite, userData){
+  favoriteArray.push(actualFAvorite)
+  if (favoriteArray.length == userData.favorites.length){
+    //console.log("favorties", favoritesArray[0]);
+    return favoriteArray;
+  }
+}
+
+
+router.post('/userdata/:username',(req,res,next)=>{
+  queryArray = [];
+  fullQueryArray = [];
+  favoriteArray = [];
+  fullFavoriteArray = [];
+  const userId = req.body.id
+  console.log("usersssss-data", userId);
+  User.findById(userId)
+  .then((userData) => {
+    userData.queries.forEach((queryId)=>{
+      Query.findById(queryId)
+      .then((actualQuery) => {
+      fullQueryArray = userDataQuery(actualQuery, userData)
+      if(fullQueryArray){
+      var array = [...fullQueryArray]
+      var objArray = [];
+  for (let i = 0; i < array.length; i++){
+    count = 1
+  for (let j = i+1; j< array.length; j++){
+    if (array[i] == array[j]){
+      count++
+      array.splice(j,1)
+      j--
+    }}
+    objArray.push({
+        query: array[i],
+        numberOfTimes: count
+      })
+      array.splice(i,1)
+  }
+  objArray.sort((a, b) => (a.numberOfTimes > b.numberOfTimes) ? -1 : 1)
+  objArray.splice(8)
+  userData.favorites.forEach((favoriteId)=>{
+  Favorite.findById(favoriteId)
+  .then((actualFavorite)=>{
+    fullFavoriteArray = userDataFavorite(actualFavorite, userData)
+    if(fullFavoriteArray){
+    console.log("favoovooovoovoov", fullQueryArray);
+    // res.render("userData", {user:userData, favorites:fullFavoriteArray[0],});
+    res.render('userData', {queries: objArray, user:userData, favorites:fullFavoriteArray});
+    }
+  })
+})
+  }
+    })
+      })
+    }).catch((err) => {
+    console.log(err);
+    });
+  })
+  
 module.exports = router;
+

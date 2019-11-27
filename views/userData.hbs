@@ -1,8 +1,7 @@
 
-
-  <nav class="navbar navbar-expand-lg sticky-top navbar-light" id="navbar">
-    <a class="navbar-brand colored-nav" href="/home"><img style="height:50px;"src="images/One-news.png"></a>
-    <a  class="navbar-brand hidden-nav" href="/home"><img style="height:50px;"src="images/One-news-white.png"></a>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light" id="navbar" style="background-color:white">
+    <a class="navbar-brand colored-nav" href="/home"><img style="height:50px;"src="/images/One-news.png"></a>
+    <a  class="navbar-brand hidden-nav" href="/home"><img style="height:50px;"src="/images/One-news-white.png"></a>
    
     <form  id="form-container"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
     
@@ -29,39 +28,36 @@
     <button class="btn btn-outline-success "type='submit'>Search</button>
     </form>
   </nav>
-<h1>Admin Panel</h1>
 
 
-<h1 id="admin-title">Users</h1>
-<div id="admin-users">
-{{#each users}}
-{{> usersCard this}}
-{{/each}}
-</div>
 
-{{!-- {{queries}} --}}
-<h1 id="admin-title">Queries</h1>
-{{!-- <div id="admin-queries">
-{{#each queries}}
-{{> queriesCard this}}
-{{/each}}
-</div> --}}
 
+  <div  >
+  <div  >
+<h4 id="user-data">Data for: {{{user.username}}}</h4>
+{{!-- <h4>Email: {{user.email}}</h4>
+<h4>Catch Phrase: {{user.catchphrase}}</h4> --}}
+<h4 id="user-data">Queries</h4>
 <table id="query-table" style="width:100%">
   <tr>
     <th>Count</th>
     <th>Query</th>
   </tr>
   {{#each queries}}
-{{> queriesCard this}}
+{{> userDataQueries this}}
 {{/each}}
 </table>
-
-
-<h1 id="admin-title">Favorites</h1>
-<div id="admin-favorites">
+<h4 id="user-data">Favorites</h4>
+{{!-- {{#if favorites.length}} --}}
+<div id="favorites-user">
 {{#each favorites}}
-{{> adminFavoriteCard this}}
+{{> userDataFavorites this}}
 {{/each}}
-
 </div>
+</div>
+
+
+
+<footer>
+    <p>&copy 2019</p>
+  </footer>
