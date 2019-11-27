@@ -19,6 +19,7 @@ var cancelProfileEdit = document.getElementById('edit-profile2');
 
 var clickSound = document.getElementById("click");
 
+var adminClick = document.getElementById("admin-click"); 
 // var showMoreQueries = document.querySelectorAll('#admin-query-button')
 // var allQueries = document.getElementById('admin-queries')
 // var fiveQueries = document.getElementById('five-queries')
@@ -46,6 +47,7 @@ for (let i = 0; i < addButton.length; i++) {
       url,
       source
     })
+    clickSound.currentTime = 0;
     clickSound.play();
     
     addButton[i].style.display = 'none';
