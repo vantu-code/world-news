@@ -12,6 +12,8 @@ var profileInputs = document.getElementsByClassName('profile-input');
 // var inputEmail = document.getElementById('edit-email');
 var submitProfileEdit = document.getElementById('submit-profile-edit')
 
+var clickSound = document.getElementById("click");
+
 // var showMoreQueries = document.querySelectorAll('#admin-query-button')
 // var allQueries = document.getElementById('admin-queries')
 // var fiveQueries = document.getElementById('five-queries')
@@ -38,6 +40,7 @@ for (let i = 0; i < addButton.length; i++) {
       url,
       source
     })
+    clickSound.play();
     // document.querySelector('#layout-title').innerHTML = "yes";
     console.log("yo bro")
   })
@@ -51,8 +54,11 @@ $(document).ready(function () {
           $(".nav-link").css("color", "white");
           $(".btn-outline-success").css("color", "cornflowerblue");   
           $(".btn-outline-success").css("border-color", "cornflowerblue");   
+<<<<<<< HEAD
           $(".containers").css("background-image", "url('../images/One-news.png')");   
          
+=======
+>>>>>>> 1bff44fc8916542f5beb26e33cf736cfd893ed3d
       } else {
           $(".navbar").css("background-color", "white");
           $(".nav-link").css("color", "black");
@@ -77,6 +83,7 @@ $(document).ready(function () {
 //   });
 // });
 editProfile.addEventListener("click", function (e){
+  
   if(profileForm.style.display === 'block'){
   profileForm.style.display = 'none';
   profileLines.style.display = 'block';
@@ -87,6 +94,7 @@ editProfile.addEventListener("click", function (e){
     profileLines.style.display = 'none';
     editProfile.innerHTML = 'Cancel';
     }
+    e.preventDefault()
 
 })
 
