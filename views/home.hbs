@@ -1,5 +1,5 @@
 
-  <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light" id="navbar">
     <a class="navbar-brand" href="/home"><img style="height:50px;"src="images/One-news.png"></a>
    
     <form  id="form-container"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
@@ -20,6 +20,12 @@
      <li class="nav-item" ><a class="nav-link" href="/logout"  >Logout</a></li>
   </ul>
   </div>
+   <form  id="form-container-mobile"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
+    
+    <input class="form-control mr-sm-2" type='text' name='search'>
+    
+    <button class="btn btn-outline-success "type='submit'>Search</button>
+    </form>
   </nav>
 
 <div class="container">
@@ -27,8 +33,8 @@
  
 
 
- <h1>results for {{query}}</h1>
-  
+ <h1 style="text-align:center;">Results for {{query}}</h1>
+  <hr>
 <div>
   {{!-- <h1>{{articles.0.title}}</h1>--}}
 {{#each articles}}
@@ -37,3 +43,6 @@
 </div>
 </div>
 </body>
+ <footer>
+    <p>&copy 2019</p>
+  </footer>

@@ -1,6 +1,6 @@
-<div id="container">
-<h1 class="signup-title">Sign up</h1>
-  <form class="signup-form" action='/auth/signup' method='POST'>
+<div id="containers" class="height-container"> 
+
+  <form class="login-form" action='/auth/signup' method='POST'>
 
     <label for=''>Username</label>
     <input type='text' name='username'>
@@ -8,7 +8,11 @@
     <label for=''>Password</label>
     <input type='password' name='password'>
 
-    <button type='submit'>Submit</button>
+    <button type='submit'>Sign Up</button>
+
+     <p class="account-message">
+      Have an account? <a href="/login">Log In</a>
+    </p>
   </form>
 </div>
 {{!-- error message display --}} 
