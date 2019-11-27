@@ -1,15 +1,6 @@
 <div id="admin-nav">
-<h1>admin</h1>
+<h1>Admin Panel</h1>
 <h2><a href="/home">Home</a></h2>
-</div>
-
-
-{{!-- {{queries}} --}}
-<h1 id="admin-title">Queries</h1>
-<div id="admin-queries">
-{{#each queries}}
-{{> queriesCard this}}
-{{/each}}
 </div>
 
 <h1 id="admin-title">Users</h1>
@@ -18,6 +9,26 @@
 {{> usersCard this}}
 {{/each}}
 </div>
+
+{{!-- {{queries}} --}}
+<h1 id="admin-title">Queries</h1>
+{{!-- <div id="admin-queries">
+{{#each queries}}
+{{> queriesCard this}}
+{{/each}}
+</div> --}}
+
+<table id="query-table" style="width:100%">
+  <tr>
+    <th>Query</th>
+    <th>Count</th>
+  </tr>
+  {{#each queries}}
+{{> queriesCard this}}
+{{/each}}
+</table>
+
+
 <h1 id="admin-title">Favorites</h1>
 <div id="admin-favorites">
 {{#each favorites}}

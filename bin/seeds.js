@@ -6,13 +6,9 @@ const Favorite = require('../models/Favorite');
 const Query = require('../models/Query');
 
 const users = [
-  {username : "Sam", password : "123"},
-  {username : "David", password : "123"},
   {username : "Sean", password : "123"},
-  {username : "Chloe", password : "123"},
-  {username : "Anna", password : "123"},
-  {username : "Rita", password : "123"},
-  {username : "Angela", password : "123"}
+  {username : "Ruben", password : "123"},
+  {username : "Rita", password : "123"}
 ]
 
 const favorites = [
@@ -34,14 +30,11 @@ const queries = [
   {query : "show"},
   {query : "show"},
   {query : "show"},
-  {query : "family"},
   {query : "samsung"},
   {query : "samsung"},
   {query : "samsung"},
   {query : "samsung"},
-  {query : "story"},
   {query : "samsung"},
-  {query : "story"},
   {query : "new york"},
   {query : "new york"},
   {query : "new york"},
@@ -49,7 +42,14 @@ const queries = [
   {query : "snowboard"},
   {query : "new york"},
   {query : "kitesurf"},
+  {query : "kitesurf"},
+  {query : "kitesurf"},
   {query : "music"},
+  {query : "music"},
+  {query : "music"},
+  {query : "bass"},
+  {query : "bass"},
+  {query : "javascript"},
   {query : "kitesurf"},
   {query : "kitesurf"},
   {query : "kitesurf"},
