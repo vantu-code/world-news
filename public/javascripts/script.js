@@ -18,6 +18,7 @@ var addFavorite = document.getElementsByClassName('add-to-favorite-hidden');
 
 var clickSound = document.getElementById("click");
 
+var adminClick = document.getElementById("admin-click"); 
 // var showMoreQueries = document.querySelectorAll('#admin-query-button')
 // var allQueries = document.getElementById('admin-queries')
 // var fiveQueries = document.getElementById('five-queries')
