@@ -82,7 +82,7 @@ router.get('/', (req, res, next) => {
         .then((favortieFromDB) => {
           var fromFunc = pushFavorite(favortieFromDB, user);
           if(fromFunc){
-            res.render('favorites', {favorites: fromFunc});
+            res.render('favorites', {favorites: fromFunc, user : user});
           }
         }).catch((err) => {
           console.log(err);

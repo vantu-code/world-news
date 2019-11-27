@@ -57,7 +57,7 @@ else {
 function userDataQuery(actualQuery, userData){
   queryArray.push(actualQuery.query)
   if (queryArray.length == userData.queries.length){
-    //console.log("favorties", favoritesArray[0]);
+
     return queryArray;
   }
 }
@@ -77,7 +77,6 @@ router.post('/userdata/:username',(req,res,next)=>{
   favoriteArray = [];
   fullFavoriteArray = [];
   const userId = req.body.id
-  console.log("usersssss-data", userId);
   User.findById(userId)
   .then((userData) => {
     userData.queries.forEach((queryId)=>{
@@ -108,8 +107,6 @@ router.post('/userdata/:username',(req,res,next)=>{
   .then((actualFavorite)=>{
     fullFavoriteArray = userDataFavorite(actualFavorite, userData)
     if(fullFavoriteArray){
-    console.log("favoovooovoovoov", fullQueryArray);
-    // res.render("userData", {user:userData, favorites:fullFavoriteArray[0],});
     res.render('userData', {queries: objArray, user:userData, favorites:fullFavoriteArray});
     }
   })
