@@ -292,11 +292,11 @@ flex-direction: column;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 1px solid rgba(121, 117, 117, 0.336);
+  border: 1px solid rgba(175, 175, 175, 0.219);
   border-radius: 5px;
   height: 90px;
   flex-wrap: wrap;
-  background-color: rgba(247, 233, 233, 0.507);
+  /* background-color: rgba(247, 233, 233, 0.507); */
 }
 
 #one-query, #one-user{
@@ -306,9 +306,9 @@ flex-direction: column;
   justify-content: space-around;
   margin: 2px;
   width: 70px;
-  border-radius: 5px;
-border: 1px solid rgba(153, 149, 149, 0.5);
-background-color: rgba(181, 232, 241, 0.253);
+  border-radius: 2px;
+border: 1px solid rgba(153, 149, 149, 0.123);
+/* background-color: rgba(255, 255, 255, 0.253); */
 }
 
 #admin-nav{
@@ -320,9 +320,9 @@ background-color: rgba(181, 232, 241, 0.253);
 }
 
 #admin-favorite{
-  background-color: rgba(247, 233, 233, 0.507);
+  /* background-color: rgba(247, 233, 233, 0.507); */
   border-radius: 5px;
-  margin: 5px 0;
+  margin: 3px 0;
   font-size: 1em;
   text-align: center;
 }
