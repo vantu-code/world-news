@@ -1,6 +1,7 @@
 
   <nav class="navbar navbar-expand-lg sticky-top navbar-light" id="navbar">
-    <a class="navbar-brand" href="/home"><img style="height:50px;"src="images/One-news.png"></a>
+    <a class="navbar-brand colored-nav" href="/home"><img style="height:50px;"src="images/One-news.png"></a>
+    <a  class="navbar-brand hidden-nav" href="/home"><img style="height:50px;"src="images/One-news-white.png"></a>
    
     <form  id="form-container"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
     
@@ -32,9 +33,9 @@
 <body>
  
 
-<h4>Hi {{user.username}}</h4>
+<h4 style="text-align:center;">Hi {{user.username}}</h4>
  <h1 style="text-align:center;">Results for {{query}}</h1>
-  
+  <hr>
 <div>
 
 {{#each articles}}
