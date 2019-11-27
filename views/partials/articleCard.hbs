@@ -20,11 +20,29 @@
    
      <button class="article-btns" type='submit'><h1 style="font-size:1.5rem;">{{this.title}}</h1></button>
      <br>
+     {{#if this.urlToImage}}
      <button class="article-btns article-img" style="display: block; float: left; cursor:pointer" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px;" src="{{this.urlToImage}}" alt=""></button>
-       <br>
+        <br>
+        {{else}}
+        <button class="article-btns article-img" style="display: block; float: left; cursor:pointer" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px;" src="/images/One-news.png" alt=""></button>
+        <br>
+        {{/if}}
+
+      {{#if this.author}}
      <button class="article-btns" type='submit'><h2>By {{this.author}}</h2></button>
+     {{else}}
+     <button class="article-btns" type='submit'><h2>By Anonymous</h2></button>
+      {{/if}}
+
+      {{#if this.source.name}}
      <button class="article-btns" type='submit'><span> Source: {{this.source.name}}</span></button>
      <br>
+      {{else}}
+      <button class="article-btns" type='submit'><span> Source: Unknown</span></button>
+     <br>
+     {{/if}}
+
+
      <button class="article-btns" style="width:60%;" type='submit'><p >{{this.description}}</p></button>
    </form>
 

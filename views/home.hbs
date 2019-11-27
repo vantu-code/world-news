@@ -32,9 +32,11 @@
 <body>
  
 
-<h4>Hi {{user.username}}</h4>
+<h4 style="text-align:center;">Hi {{user.username}}</h4>
+{{#if query}}
  <h1 style="text-align:center;">Results for {{query}}</h1>
-  
+  <hr>
+  {{/if}}
 <div>
 
 {{#each articles}}

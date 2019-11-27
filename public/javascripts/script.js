@@ -5,16 +5,8 @@ var favoriteFormArray = document.querySelectorAll('.favorite-form');
 var clearHistory= document.getElementById('clear-history');
 var editProfile= document.getElementById('edit-profile');
 
-<<<<<<< HEAD
-// clearHistory.addEventListener("click", function (e){
-//   e.preventDefault()
-//     axios
-//     .post('/profile')
-// })
-=======
 var profileForm = document.getElementById('profile-form');
 var profileLines = document.getElementById('profile-lines');
->>>>>>> 73b3539c3bc02b02927d80d10702a87bbaa6ad01
 
 var profileInputs = document.getElementsByClassName('profile-input');
 // var inputEmail = document.getElementById('edit-email');
@@ -26,15 +18,12 @@ var submitProfileEdit = document.getElementById('submit-profile-edit')
 
 
 
-<<<<<<< HEAD
-=======
 
 // submitProfileEdit.addEventListener("click", function (e){
 //   e.preventDefault()
 //     axios
 //     .post('/profile')
 // })
->>>>>>> 73b3539c3bc02b02927d80d10702a87bbaa6ad01
 console.log(favoriteFormArray[0]);
 for (let i = 0; i < addButton.length; i++) {
   addButton[i].addEventListener("click", function (e){
@@ -60,7 +49,6 @@ for (let i = 0; i < addButton.length; i++) {
   })
 }
 
-<<<<<<< HEAD
 
 $(document).ready(function () {
   $(window).scroll(function () {
@@ -93,7 +81,6 @@ $(document).ready(function () {
 //      }
 //   });
 // });
-=======
 editProfile.addEventListener("click", function (e){
   if(profileForm.style.display === 'block'){
   profileForm.style.display = 'none';
@@ -160,7 +147,6 @@ editProfile.addEventListener("click", function (e){
 
 
 
->>>>>>> 73b3539c3bc02b02927d80d10702a87bbaa6ad01
 
 // addButton.forEach((button)=>{
 
