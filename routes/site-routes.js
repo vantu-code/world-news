@@ -114,7 +114,7 @@ router.post("/home", (req, res, next) => {
   });
 
 router.post("/home/add-to-favorite", (req, res, next) => {
-  console.log("favorite", req.body.source);
+  // console.log("favorite", req.body.source);
   
   var title = req.body.title;
   var author = req.body.author;
