@@ -28,8 +28,7 @@
      <button class="article-btns" style="width:60%;" type='submit'><p >{{this.description}}</p></button>
    </form>
 
-   <form action='/home/add-to-favorite' style="padding:10px 5px; margin-top:-65px;" method='POST'>
-   
+   <form class="favorite-form" action='/home/add-to-favorite' style="padding:10px 5px; margin-top:-65px;" method='POST'>
     
      <input type='text'  style="display:none;" name='title' value="{{this.title}}">
    
@@ -44,8 +43,11 @@
 
     
      <input type='text' style="display:none;" name='article' value="{{this.content}}">
+
+      <label for=''></label>
+     <input type='text' style="display:none;" name='source' value="{{this.source.name}}">
    
-     <button type='submit' style="background-color:transparent; margin-top:10px;"><img src="images/icons8-hearts.png"></button>
+     <button class="add-to-favorite" type='submit' style="background-color:transparent; margin-top:10px;"><img src="images/icons8-hearts.png"></button>
    </form>
 
  

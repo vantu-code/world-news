@@ -47,12 +47,16 @@ router.get("/home", (req, res, next) => {
       q: (query.query),
       sortBy: 'relevancy',
     }).then(response => {
-    res.render("home", {articles: response.articles, query: query.query})
+    res.render("home", {articles: response.articles, query: query.query, user:user})
     })
   })
 }
 else{
-  res.render("home")
+  const {_id} = req.session.currentUser
+  User.findById(_id)
+  .then((user) => {
+  res.render("home", {user:user})
+})
 }
  });
 })
@@ -80,7 +84,10 @@ else{
 
 
 router.post("/home", (req, res, next) => {
-
+  if (!req.body.search){
+    res.redirect("/home")
+  }
+  else {
   var articleSearch = req.body.search;
   Query.create ({
     query: articleSearch,
@@ -95,16 +102,19 @@ router.post("/home", (req, res, next) => {
           q: (articleSearch),
           sortBy: 'relevancy',
         }).then(response => {
-        res.render("home", {articles: response.articles, query: articleSearch})
+        res.render("home", {articles: response.articles, query: articleSearch, user:user})
         });
   })
 }).catch((err) => {
   console.log(err);
 });
+
+
+  }
   });
 
 router.post("/home/add-to-favorite", (req, res, next) => {
-  console.log("favorite", req.body);
+  console.log("favorite", req.body.source);
   
   var title = req.body.title;
   var author = req.body.author;
@@ -129,9 +139,11 @@ router.post("/home/add-to-favorite", (req, res, next) => {
       user.favorites.push(articleId);
       user.save();
       console.log("user from user", user)
+      
+      res.status(201);
+      res.json();
       // res.redirect("/home");
-      res.status(201)
-      // .res.Json()
+      
     }).catch((err) => {
       
     });

@@ -4,9 +4,9 @@
    
     <form  id="form-container"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
     
-    <input class="form-control mr-sm-2" type='text' name='search'>
+    <input class="form-control mr-sm-2" type='text' name='search' placeholder="search my history">
     
-    <button class="btn btn-outline-success "type='submit'>Search</button>
+    <button class="btn btn-outline-success "type='submit' >Search</button>
     </form>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,11 +32,11 @@
 <body>
  
 
-
+<h4>Hi {{user.username}}</h4>
  <h1 style="text-align:center;">Results for {{query}}</h1>
-  <hr>
+  
 <div>
-  {{!-- <h1>{{articles.0.title}}</h1>--}}
+
 {{#each articles}}
 {{> articleCard this}}
 {{/each}}

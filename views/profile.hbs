@@ -22,10 +22,31 @@
   </div>
   </nav>
   <div class="height-container">
-    <h2>hey {{{user.username}}}</h2>
-    <button id="edit-interests">Edit interests</button>
-    {{!-- <button id="clear-history">Clear history</button> --}}
-    <form method='POST'>
-      <button id="clear-history" type='submit'>Clear history</button>
-    </form>
+  <div style="display:block" id="profile-lines" >
+<h2>hey! </h2>
+<h4>username: {{{user.username}}}</h4>
+<h4>email: {{user.email}}</h4>
+<h4>Catch Phrase: {{user.catchPhrase}}</h4>
+</div>
+
+<button  id="edit-profile">Edit profile</button>
+
+  <form style="display:none" id="profile-form" action='/profile/edit' method='POST'>
+
+    <label for=''>Username</label>
+    <input class="profile-input" type='text' name='username' value={{user.username}}>
+  
+    <label for=''>E-mail</label>
+    <input class="profile-input" type='text' name='email' value={{user.email}}>
+
+    <label for=''>Catch Phrase</label>
+    <input class="profile-input" type='text' name='catchPhrase' value={{user.catchPhrase}}>
+  
+    <button id="submit-profile-edit" type='submit'>Submit</button>
+  </form>
+
+{{!-- <button id="clear-history">Clear history</button> --}}
+<form method='POST'>
+  <button id="clear-history" type='submit'>Clear query history</button>
+</form>
 </div>

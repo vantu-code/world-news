@@ -36,6 +36,8 @@ function pushFavorite(favortieFromDB, user){
     id:  favortieFromDB._id,
     source: favortieFromDB.source
     }); 
+    console.log("favooooooo", favortieFromDB);
+    
       if (favoritesArray.length == user.favorites.length){
         //console.log("favorties", favoritesArray[0]);
         return favoritesArray;

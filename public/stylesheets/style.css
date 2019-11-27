@@ -350,3 +350,77 @@ a #container , p #container{
       background-color: black;
     }
   } */
+
+
+
+
+
+
+
+
+
+
+/* Jonathan edits admin */
+#admin-queries, #admin-users{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid rgba(175, 175, 175, 0.219);
+  border-radius: 5px;
+  height: 90px;
+  flex-wrap: nowrap;
+  /* background-color: rgba(247, 233, 233, 0.507); */
+}
+
+#one-query, #one-user{
+  box-shadow: 1px 2px rgba(94, 87, 87, 0.466);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  overflow-wrap: break-word;
+  flex-wrap: nowrap;
+  margin: 2px;
+  width: 80px;
+  border-radius: 2px;
+border: 1px solid rgba(153, 149, 149, 0.123);
+/* background-color: rgba(255, 255, 255, 0.253); */
+}
+
+#admin-nav{
+  width: 100%;
+  text-align: center;
+  background-color: #656769a6;
+  height: 50px;
+  margin-bottom: -10px;
+}
+#admin-nav h2{
+  font-size: 1.3em;
+}
+
+#admin-favorite{
+  /* background-color: rgba(247, 233, 233, 0.507); */
+  border-radius: 5px;
+  margin: 3px 0;
+  font-size: 1em;
+  text-align: center;
+}
+#admin-title{
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 10px 0;
+}
+#query-table{
+  text-align: center;
+  margin: -10px 0;
+}
+td{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+  background-color: rgb(168, 161, 161);
+}
+th{
+  font-size: 1em;
+  color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+  background-color: rgb(94, 92, 92);
+}
