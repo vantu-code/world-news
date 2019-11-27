@@ -1,12 +1,13 @@
 
-  <nav class="navbar navbar-expand-lg sticky-top navbar-light">
-    <a class="navbar-brand" href="/home"><img style="height:50px;padding-left:15px;"src="images/One-news.png"></a>
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light" id="navbar" style="background-color:white">
+    <a class="navbar-brand colored-nav" href="/home"><img style="height:50px;"src="images/One-news.png"></a>
+    <a  class="navbar-brand hidden-nav" href="/home"><img style="height:50px;"src="images/One-news-white.png"></a>
    
     <form  id="form-container"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
     
-    <input class="form-control mr-sm-2" type='text' name='search'>
+    <input class="form-control mr-sm-2" type='text' name='search' placeholder="search my history">
     
-    <button class="btn btn-outline-success "type='submit'>Search</button>
+    <button class="btn btn-outline-success "type='submit' >Search</button>
     </form>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,9 +21,15 @@
      <li class="nav-item" ><a class="nav-link" href="/logout"  >Logout</a></li>
   </ul>
   </div>
+   <form  id="form-container-mobile"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
+    
+    <input class="form-control mr-sm-2" type='text' name='search' placeholder="search my history">
+    
+    <button class="btn btn-outline-success "type='submit'>Search</button>
+    </form>
   </nav>
-  <div id="profile-page" class="height-container container">
-  <div style="display:block" id="profile-lines" >
+  <div id="profile-page" class="height-container2 container">
+  <div id="profile-lines" >
 <h4>Username: {{{user.username}}}</h4>
 <h4>Email: {{user.email}}</h4>
 <h4>Catch Phrase: {{user.catchPhrase}}</h4>
@@ -30,18 +37,23 @@
 
 <button  id="edit-profile">Edit profile</button>
 
-  <form style="display:none" id="profile-form" action='/profile/edit' method='POST'>
+  <form id ="profile-form" style="display:none" id="profile-form" action='/profile/edit' method='POST'>
 
     <label for=''>Username</label>
+      <br>
     <input class="profile-input" type='text' name='username' value={{user.username}}>
-  
+    <br>
     <label for=''>E-mail</label>
+      <br>
     <input class="profile-input" type='text' name='email' value={{user.email}}>
-
+  <br>
     <label for=''>Catch Phrase</label>
+      <br>
     <input class="profile-input" type='text' name='catchPhrase' value={{user.catchPhrase}}>
-  
+    <br>
     <button id="submit-profile-edit" type='submit'>Submit</button>
+
+    <button  id="edit-profile2">Cancel</button>
   </form>
 
 {{!-- <button id="clear-history">Clear history</button> --}}
@@ -49,3 +61,7 @@
   <button id="clear-history" type='submit'>Clear query history</button>
 </form>
 </div>
+
+<footer>
+    <p>&copy 2019</p>
+  </footer>

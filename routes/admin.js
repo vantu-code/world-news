@@ -41,6 +41,7 @@ objArray.splice(8)
     .then((favorites)=>{
       User.find()
       .then((users)=>{
+
     res.render('admin', {queries: objArray, favorites: favorites, users: users});
   })})
   }).catch((err) => {

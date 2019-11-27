@@ -193,6 +193,13 @@ a #container , p #container{
   flex-direction: column;
 }
 
+#profile-lines {
+  display:block;
+   margin-top:-50px;
+   color:white;
+  
+}
+
   /* nav {
     height:15vh;
     background-color:cornflowerblue;
@@ -296,6 +303,12 @@ a #container , p #container{
     min-height:100vh;
   }
 
+  .height-container2 {
+    min-height:77vh;
+    min-width: 100vw;
+    
+    background-color: rgb(81, 108, 148);
+  }
  
   footer {
     height:10vh;
@@ -355,7 +368,27 @@ a #container , p #container{
   max-height:50%;
 }
 
+#profile-form {
+  display:flex;
+  flex-direction:column;
+  color:white;
+}
 
+#profile-form input {
+  text-align:center;
+}
+
+#profile-form button {
+    border:1px solid white;
+    color:white;
+    margin-top:10px;
+}
+
+#edit-profile2 {
+  text-align:center;
+  margin:10px auto;
+  
+}
 
   @media screen and (max-width: 600px) {
     #form-container {display: none;}
@@ -385,25 +418,27 @@ a #container , p #container{
 #admin-queries, #admin-users{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   border: 1px solid rgba(175, 175, 175, 0.219);
   border-radius: 5px;
-  height: 90px;
-  flex-wrap: nowrap;
+
+  flex-wrap: wrap;
+
   /* background-color: rgba(247, 233, 233, 0.507); */
 }
 
 #one-query, #one-user{
-  box-shadow: 1px 2px rgba(94, 87, 87, 0.466);
+  box-shadow: 1px 2px rgba(94, 87, 87, 0.192);
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-around;
   overflow-wrap: break-word;
-  flex-wrap: nowrap;
+  
   margin: 2px;
-  width: 80px;
+  width: 100px;
+  height: 20px;
   border-radius: 2px;
-border: 1px solid rgba(153, 149, 149, 0.123);
+border: 1px solid rgba(153, 149, 149, 0.068);
 /* background-color: rgba(255, 255, 255, 0.253); */
 }
 
