@@ -54,14 +54,18 @@ $(document).ready(function () {
           $(".nav-link").css("color", "white");
           $(".btn-outline-success").css("color", "cornflowerblue");   
           $(".btn-outline-success").css("border-color", "cornflowerblue");   
+         
       } else {
           $(".navbar").css("background-color", "white");
           $(".nav-link").css("color", "black");
           $(".btn-outline-success").css("color", "#28a745");
           $(".btn-outline-success").css("border-color", "#28a745");
+          
       }
   });
 });
+
+
 
 
 // $(function() {
