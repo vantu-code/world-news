@@ -292,11 +292,11 @@ flex-direction: column;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  border: 1px solid black;
+  border: 1px solid rgba(121, 117, 117, 0.336);
   border-radius: 5px;
   height: 90px;
   flex-wrap: wrap;
-  background-color: rgba(175, 182, 182, 0.267);
+  background-color: rgba(247, 233, 233, 0.507);
 }
 
 #one-query, #one-user{
@@ -305,10 +305,10 @@ flex-direction: column;
   flex-direction: column-reverse;
   justify-content: space-around;
   margin: 2px;
-  width: 50px;
+  width: 70px;
   border-radius: 5px;
 border: 1px solid rgba(153, 149, 149, 0.5);
-background-color: rgb(255, 255, 255);
+background-color: rgba(181, 232, 241, 0.253);
 }
 
 #admin-nav{
@@ -320,7 +320,7 @@ background-color: rgb(255, 255, 255);
 }
 
 #admin-favorite{
-  background-color: rgb(175, 182, 182, 0.267);
+  background-color: rgba(247, 233, 233, 0.507);
   border-radius: 5px;
   margin: 5px 0;
   font-size: 1em;
