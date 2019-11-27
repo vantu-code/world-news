@@ -61,7 +61,7 @@ const queries = [
 
 
 mongoose
-  .connect('mongodb://localhost:27017/world-news', { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => {
     return Query.create(queries);
   })
