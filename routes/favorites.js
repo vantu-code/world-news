@@ -47,7 +47,7 @@ function pushFavorite(favortieFromDB, user){
 
 
 
-router.get('/delete/:favoriteId', (req, res ,next)=>{
+router.delete('/delete/:favoriteId', (req, res ,next)=>{
   console.log("current fav", req.params.favoriteId);
   var currentFav = req.params.favoriteId;
   const {_id} = req.session.currentUser;
@@ -59,8 +59,8 @@ router.get('/delete/:favoriteId', (req, res ,next)=>{
     user.favorites = [...filteredArr]
     user.save()
     // console.log("works", user.favorites);
-    res.redirect('/favorites');
-
+    // res.redirect('/favorites');
+    res.status(204).send();
   })
 .catch((err) => {
   console.log(err);
@@ -81,6 +81,7 @@ router.get('/', (req, res, next) => {
         .then((favortieFromDB) => {
           var fromFunc = pushFavorite(favortieFromDB, user);
           if(fromFunc){
+            console.log("favorite", fromFunc)
             res.render('favorites', {favorites: fromFunc, user : user});
           }
         }).catch((err) => {
