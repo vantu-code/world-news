@@ -11,7 +11,7 @@ var profileLines = document.getElementById('profile-lines');
 var profileInputs = document.getElementsByClassName('profile-input');
 // var inputEmail = document.getElementById('edit-email');
 var submitProfileEdit = document.getElementById('submit-profile-edit')
-var addFavorite = document.getElementsByClassName('add-to-favorite-hidden');
+var removeFavorite = document.getElementsByClassName('add-to-favorite-hidden');
 var cancelProfileEdit = document.getElementById('edit-profile2');
 var articleDeleteButtons = document.querySelectorAll('.article-delete-btn');
 
@@ -21,6 +21,8 @@ var articleDeleteButtons = document.querySelectorAll('.article-delete-btn');
 var clickSound = document.getElementById("click");
 
 var adminClick = document.getElementById("admin-click"); 
+
+
 // var showMoreQueries = document.querySelectorAll('#admin-query-button')
 // var allQueries = document.getElementById('admin-queries')
 // var fiveQueries = document.getElementById('five-queries')
@@ -29,7 +31,9 @@ var adminClick = document.getElementById("admin-click");
 
 
 console.log(favoriteFormArray[0]);
+
 for (let i = 0; i < addButton.length; i++) {
+  if (addButton[i].style.display != 'none'){
   addButton[i].addEventListener("click", function (e){
     console.log("event", e.target);
     var title = favoriteFormArray[i].title.value;
@@ -52,18 +56,26 @@ for (let i = 0; i < addButton.length; i++) {
     clickSound.play();
     
     addButton[i].style.display = 'none';
-    addFavorite[i].style.display = 'block';
+    removeFavorite[i].style.display = 'block';
   console.log('hello');
   
     // document.querySelector('#layout-title').innerHTML = "yes";
     console.log("yo bro")
   })
 }
+else{
+  removeFavorite[i].addEventListener("click", function (e){
+  e.preventDefault()
+  addButton[i].style.display = 'block';
+  removeFavorite[i].style.display = 'none';
+  })
+}
+}
 
 // addButton.addEventListener("click", function (e){
 //   e.preventDefault();
 //   addButton.style.display = 'none';
-//   addFavorite.style.display = 'block';
+//   removeFavorite.style.display = 'block';
 //   console.log('hello');
   
 // })
@@ -161,6 +173,7 @@ if (articleDeleteButtons) {
     })
   });
 }
+
 
 // showMoreQueries.addEventListener("click", function (e){
 //   if(allQueries.style.display == 'none'){
