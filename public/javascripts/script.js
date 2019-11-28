@@ -126,8 +126,8 @@ editProfile.addEventListener("click", function (e){
   if(profileForm.style.display === 'block'){
     editProfile.style.display = 'block';
     cancelProfileEdit.style.display = 'none';
-  profileForm.style.display = 'none';
-  profileLines.style.display = 'block';
+    profileForm.style.display = 'none';
+    profileLines.style.display = 'block';
  
   }
   else if(profileForm.style.display === 'none'){
