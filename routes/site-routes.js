@@ -17,7 +17,6 @@ const newsapi = new NewsAPI('d79e3bc5963748c0a667349902211304');
 
 
 
-
 // PRE ROUTE MIDDLEWARE - check if user has authenticated cookie
 
 router.use((req, res, next) => {
@@ -114,7 +113,7 @@ router.post("/home", (req, res, next) => {
   });
 
 router.post("/home/add-to-favorite", (req, res, next) => {
-  console.log("favorite", req.body.source);
+  // console.log("favorite", req.body.source);
   
   var title = req.body.title;
   var author = req.body.author;

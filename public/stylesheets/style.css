@@ -531,8 +531,8 @@ a #container , p #container{
   flex-direction: column-reverse;
   justify-content: space-around;
   overflow-wrap: break-word;
-  
-  margin: 2px;
+  margin: 5px 0;
+  margin: 8px;
   width: 100px;
   height: 20px;
   border-radius: 2px;
@@ -577,4 +577,13 @@ th{
   color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.308);
   background-color: rgb(94, 92, 92);
+}
+#user-data{
+  text-align: center;
+  margin: 50px 0;
+  color:white;
+  background-color: rgb(58, 57, 56);
+}
+#favorites-user{
+  background-color: none;
 }

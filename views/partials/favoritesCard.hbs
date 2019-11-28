@@ -10,7 +10,8 @@
 
 
 
-<article class="article-card2 container">
+<article class="article-card2 container" id="favourite-article-{{this.id}}">
+
 
   <form action='/article' method='POST' style="min-height:37vh; color:black;padding:10px 5px;margin-bottom:10px;">
    
@@ -75,7 +76,7 @@
      <input type='text' style="display:none;" name='source' value="{{this.source}}">
    </form>
 
-  <a style="margin-top:15px;" href="/favorites/delete/{{this.id}}"><img style="width:13%;margin-top:0px;margin-bottom:20px;" src="images/icons8-trash.png"></a>
+  <a class="article-delete-btn" style="margin-top:15px;" href="/favorites/delete/{{this.id}}" data-favoriteid="{{this.id}}"><img style="width:13%;margin-top:0px;margin-bottom:20px;" src="images/icons8-trash.png" data-favoriteid="{{this.id}}"></a>
    
 </article>
     {{!-- <button id="add-edit-comment">add/edit comment</button> --}}
