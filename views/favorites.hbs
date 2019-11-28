@@ -5,7 +5,7 @@
    
     <form  id="form-container"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
     
-    <input class="form-control mr-sm-2" type='text' name='search' placeholder="search my history">
+    <input class="form-control mr-sm-2" type='text' name='search' placeholder="Search news">
     
     <button class="btn btn-outline-success "type='submit' >Search</button>
     </form>
@@ -29,7 +29,7 @@
     </form>
   </nav>
 
-<div class="height-container">
+<div class="height-container container" style="margin-top:0px;">
 {{#if favorites.length}}
 {{#each favorites}}
 {{> favoritesCard this}}
@@ -37,10 +37,10 @@
 
 
 {{else}}
-<h1>nothing to show</h1>
+<h1 style="text-align:center; padding-top:20px;">To add an article to favorites, search for news and press the heart to save it for later.></h1>
 {{/if}}
 </div>
 
  <footer>
-    <p>&copy 2019</p>
+    <p>Rose & Jonathan &copy 2019</p>
   </footer>
