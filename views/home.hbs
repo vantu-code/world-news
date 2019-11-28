@@ -19,6 +19,9 @@
      <li class="nav-item"><a class="nav-link" href="/favorites">Favorites</a></li>
      <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
      <li class="nav-item" ><a class="nav-link" href="/logout"  >Logout</a></li>
+     {{#ifEquals user.username "Admin"}}
+      <li class="nav-item" ><a class="nav-link" href="/admin"  >Admin Panel</a></li>
+    {{/ifEquals}}
   </ul>
   </div>
    <form  id="form-container-mobile"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
@@ -34,6 +37,7 @@
  
 
 <h4 style="text-align:center;">Hi {{user.username}}</h4>
+
 {{#if query}}
  <h1 style="text-align:center;">Results for {{query}}</h1>
   <hr>

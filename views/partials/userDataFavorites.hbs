@@ -1,0 +1,24 @@
+
+  <form action='/article' method='POST' style="min-height:35vh; color:black;padding:10px 5px;margin-bottom:15px;" id="favorites-user">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='title' value="{{this.title}}">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='author' value="{{this.author}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='url' value="{{this.url}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='article' value="{{this.content}}">
+   
+     <button class="article-btns" type='submit'><h1>{{this.title}}</h1></button>
+     <button class="article-btns article-img" style="width: 30%;display: inline; float: left; cursor:pointer; " type='submit'><img style="width:100%; cursor:pointer;padding:0;" src="{{this.image}}" alt=""></button>
+     <button class="article-btns" type='submit'><h2>{{this.author}}</h2></button>
+     <button class="article-btns" type='submit'><span> source: {{this.source}}</span></button>
+     <button class="article-btns" style="max-width:50%;" type='submit'><p >{{this.description}}</p></button>
+   </form>

@@ -36,9 +36,8 @@ function pushFavorite(favortieFromDB, user){
     id:  favortieFromDB._id,
     source: favortieFromDB.source
     }); 
-    console.log("favooooooo", favortieFromDB);
-    
-      if (favoritesArray.length == user.favorites.length){
+    //console.log("favooooooo", favortieFromDB);
+        if (favoritesArray.length == user.favorites.length){
         //console.log("favorties", favoritesArray[0]);
         return favoritesArray;
       }
@@ -59,7 +58,7 @@ router.get('/delete/:favoriteId', (req, res ,next)=>{
     })
     user.favorites = [...filteredArr]
     user.save()
-    console.log("works", user.favorites);
+    // console.log("works", user.favorites);
     res.redirect('/favorites');
 
   })
@@ -82,7 +81,7 @@ router.get('/', (req, res, next) => {
         .then((favortieFromDB) => {
           var fromFunc = pushFavorite(favortieFromDB, user);
           if(fromFunc){
-            res.render('favorites', {favorites: fromFunc});
+            res.render('favorites', {favorites: fromFunc, user : user});
           }
         }).catch((err) => {
           console.log(err);
