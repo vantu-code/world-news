@@ -32,6 +32,12 @@ h2 {
   width: 100%;
 }
 
+label {
+  margin-top:20px;
+  margin-bottom:4px;
+  font-size:18px;
+}
+
 #form input,
 #form {
   box-sizing: border-box;
@@ -47,7 +53,7 @@ button {
   background: transparent;
   border: none;
   outline: none;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
   /* display: inline-block; */
   font-size: 14px;
@@ -55,6 +61,7 @@ button {
   text-decoration: none;
   transition: .3s ease background;
   text-align: center;
+  
 }
 
 button:hover {
@@ -158,13 +165,44 @@ a #container , p #container{
     margin: 20px auto;
     text-align: center;
   }
+  .login-form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    background-color:rgba(227, 228, 230, 0.379);
+    padding:45px;
+  }
+
   .signup-form{
     display: flex;
     flex-direction: column;
-    width: 25%;
     margin: 0 auto;
     text-align: center;
+    background-color:rgba(227, 228, 230, 0.379);
+    padding:45px;
+    width:80%;
   }
+  .signup-form input {
+    text-align:center;
+  }
+
+  .signup-form label{
+    margin:10px;
+    color:white;
+  }
+
+  .signup-form button{
+    margin: 15px;
+    color:white;
+   border:1px solid white;
+   cursor:pointer;
+  }
+
+  .signup-form button:hover {
+      color:black;
+  }
+ 
   .signup-title{
     margin: 20px auto;
     text-align: center;
@@ -182,6 +220,7 @@ a #container , p #container{
 
   .navbar {
     padding:1rem;
+    margin-bottom:0px;
   }
 
 #profile-page {
@@ -238,6 +277,8 @@ a #container , p #container{
   flex-flow:row nowrap;
 }
 
+
+
   #search-form {
     display: flex;
     justify-content: center;
@@ -270,6 +311,21 @@ a #container , p #container{
     min-width:100px;
   }
 
+  #edit-profile {
+    border:1px solid black;
+    padding:3px 15px;
+    width:32%;
+    margin:5px auto;
+    font-size:14px;
+  }
+
+  #clear-history {
+    margin-top:12px;
+    border:1px solid black;
+    padding:3px 18px;
+    font-size:14px;
+  }
+
   #article-img {
     width:100%;
     max-height:140px;
@@ -287,10 +343,19 @@ a #container , p #container{
 
   .article-card {
     background-color:#fff;
-    padding: 3% 20px 1% 20px;
+    padding: 0% 20px 2% 20px;
     margin:0px auto;
     width:92%;
-    min-height:57vh;
+    min-height:65vh;
+    /* box-shadow:3px 3px 3px 0px rgba(121, 119, 119, 0.75); */
+  }
+
+  .article-card2 {
+    background-color:#fff;
+    padding: 0% 20px 2% 20px;
+    margin:0px auto;
+    width:92%;
+    min-height:45vh;
     /* box-shadow:3px 3px 3px 0px rgba(121, 119, 119, 0.75); */
   }
 
@@ -376,25 +441,58 @@ a #container , p #container{
 
 #profile-form input {
   text-align:center;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.5);
+  border:none;
+  height:26px;
+  width:200px;
 }
 
 #profile-form button {
-    border:1px solid white;
+   font-size:15px;
     color:white;
-    margin-top:10px;
+    margin-top:18px;
+    
 }
 
 #edit-profile2 {
   text-align:center;
   margin:10px auto;
+ 
   
 }
 
+.btn-outline-success {
+  background-color:transparent;
+  color:#28a745;
+}
+
+.navbar {
+  color:black;
+  background-color:white;
+
+}
+
+#submit-profile-edit {
+  margin-top:15px;
+  padding:2px 10px;
+ 
+  border-radius:0px;;
+ 
+}
+
+#edit-profile2 {
+  padding:2px 15px;
+ 
+}
+
+
   @media screen and (max-width: 600px) {
     #form-container {display: none;}
-    #form-container-mobile {display:flex; margin-top:30px;};
+    #form-container-mobile {display:flex; margin-top:25px;};
     .article-img { display:block;text-align:center;float:center;}
     #article-img { margin:0 auto;display:block;}
+    .nav-link {font-size:16px;}
+
   }
 /* 
   @media screen and (max-width: 600px) {
@@ -433,8 +531,8 @@ a #container , p #container{
   flex-direction: column-reverse;
   justify-content: space-around;
   overflow-wrap: break-word;
-  
-  margin: 2px;
+  margin: 5px 0;
+  margin: 8px;
   width: 100px;
   height: 20px;
   border-radius: 2px;
@@ -479,4 +577,13 @@ th{
   color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.308);
   background-color: rgb(94, 92, 92);
+}
+#user-data{
+  text-align: center;
+  margin: 50px 0;
+  color:white;
+  background-color: rgb(58, 57, 56);
+}
+#favorites-user{
+  background-color: none;
 }

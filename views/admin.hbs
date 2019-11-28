@@ -6,7 +6,7 @@
    
     <form  id="form-container"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
     
-    <input class="form-control mr-sm-2" type='text' name='search' placeholder="search my history">
+    <input class="form-control mr-sm-2" type='text' name='search' placeholder="Search news">
     
     <button class="btn btn-outline-success "type='submit' >Search</button>
     </form>
@@ -20,6 +20,7 @@
      <li class="nav-item"><a class="nav-link" href="/favorites">Favorites</a></li>
      <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
      <li class="nav-item" ><a class="nav-link" href="/logout"  >Logout</a></li>
+      <li class="nav-item" ><a class="nav-link" href="/admin"  >Admin Panel</a></li>
   </ul>
   </div>
    <form  id="form-container-mobile"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
@@ -63,4 +64,5 @@
 {{#each favorites}}
 {{> adminFavoriteCard this}}
 {{/each}}
+
 </div>

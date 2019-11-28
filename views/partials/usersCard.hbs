@@ -1,3 +1,13 @@
 <article id="one-user">
-<p>{{this.username}}</p>
+<form action='/admin/userdata/{{this.username}}' method='POST'>
+
+  {{!-- <label style="display:none" for=''></label>
+  <input style="display:none" type='text' name='Email'> --}}
+
+  <label style="display:none" for=''></label>
+  <input style="display:none" type='text' name='id' value={{this.id}}>
+
+  <button class="profile-from-admin" type='submit'><p>{{this.username}}</p></button>
+</form>
+
 </article>

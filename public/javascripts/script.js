@@ -13,6 +13,7 @@ var profileInputs = document.getElementsByClassName('profile-input');
 var submitProfileEdit = document.getElementById('submit-profile-edit')
 var addFavorite = document.getElementsByClassName('add-to-favorite-hidden');
 var cancelProfileEdit = document.getElementById('edit-profile2');
+var articleDeleteButtons = document.querySelectorAll('.article-delete-btn');
 
 // var navbarImgLight = document.getElementById('colored-nav')
 // var navbarImgDark = document.getElementById('hidden-nav')
@@ -73,28 +74,34 @@ $(document).ready(function () {
       if ($(window).scrollTop() >= 50) {
           $(".navbar").css("background-color", "rgba(13, 12, 19, 0.75)");
           $(".nav-link").css("color", "white");
-          $(".btn-outline-success").css("color", "cornflowerblue");   
-
-          $(".btn-outline-success").css("border-color", "cornflowerblue");   
-
-          $(".containers").css("background-image", "url('../images/One-news.png')");   
-
-          $(".btn-outline-success").css("border-color", "cornflowerblue"); 
-          $(".containers").css("background-image", "url('../images/One-news-white.png')"); 
-
+      
           $(".colored-nav").css("display", "none"); 
           $(".hidden-nav").css("display", "block"); 
           $(".navbar-toggler-icon").css("color", "rgba(255, 255, 255, 0.733)"); 
           $(".navbar-toggler").css("background-color", "rgba(255, 255, 255, 0.733)"); 
+          $(".btn-outline-success").css("background-color", "transparent"); 
+         
+          
+          $(".btn-outline-success").css("color", "cornflowerblue");  
+          $(".btn-outline-success:hover").css("color", "white");    
+        
+          // $(".btn :hover").css("background-color", "cornflowerblue");    
+
+          $(".btn-outline-success").css("border-color", "cornflowerblue"); 
+
+          $(".containers").css("background-image", "url('../images/One-news-white.png')"); 
           
       } else {
           $(".navbar").css("background-color", "white");
           $(".nav-link").css("color", "black");
-          $(".btn-outline-success").css("color", "#28a745");
-          $(".btn-outline-success").css("border-color", "#28a745");
+         
           $(".containers").css("background-image", "url('../images/One-news.png')"); 
           $(".colored-nav").css("display", "block"); 
           $(".hidden-nav").css("display", "none"); 
+          $(".btn-outline-success:hover").css("background-color", "#28a745");  
+          $(".btn-outline-success").css("background-color", "transparent");  
+          $(".btn-outline-success").css("color", "#28a745");
+          $(".btn-outline-success").css("border-color", "#28a745");
          
       }
   });
@@ -114,26 +121,52 @@ $(document).ready(function () {
 //      }
 //   });
 // });
-editProfile.addEventListener("click", function (e){
-  
 
-  if(profileForm.style.display === 'block'){
-    editProfile.style.display = 'block';
-    cancelProfileEdit.style.display = 'none';
-  profileForm.style.display = 'none';
-  profileLines.style.display = 'block';
- 
-  }
-  else if(profileForm.style.display === 'none'){
-    editProfile.style.display = 'none';
-    cancelProfileEdit.style.display = 'block';
-    profileForm.style.display = 'block';
-    profileLines.style.display = 'none';
+if (editProfile) {
+
+  editProfile.addEventListener("click", function (e){
+    
   
+    if(profileForm.style.display === 'block'){
+      editProfile.style.display = 'block';
+      cancelProfileEdit.style.display = 'none';
+    profileForm.style.display = 'none';
+    profileLines.style.display = 'block';
+   
     }
-    e.preventDefault()
+    else if(profileForm.style.display === 'none'){
+      editProfile.style.display = 'none';
+      cancelProfileEdit.style.display = 'block';
+      profileForm.style.display = 'block';
+      profileLines.style.display = 'none';
+    
+      }
+      e.preventDefault()
+  
+  })
+}
 
-})
+if (articleDeleteButtons) {
+  articleDeleteButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const { favoriteid } = e.target.dataset;
+
+      console.log(e.target.dataset);
+      const articleToHide = document.getElementById(`favourite-article-${favoriteid}`);
+
+      axios.delete(`/favorites/delete/${favoriteid}`)
+        .then( (response) => {
+          if(response.status === 204) {
+            articleToHide.innerHTML = '';
+            articleToHide.style.display = 'none';
+          }
+        })
+        .catch( (err) => console.log(err));
+    })
+  });
+}
 
 // showMoreQueries.addEventListener("click", function (e){
 //   if(allQueries.style.display == 'none'){
@@ -172,7 +205,7 @@ editProfile.addEventListener("click", function (e){
 //     axios
 //     .post('/profile')
 // })
-// })
+// // })
 
 
 
@@ -200,3 +233,4 @@ editProfile.addEventListener("click", function (e){
 //     console.log("yo bro")
 // })
 // } );
+
