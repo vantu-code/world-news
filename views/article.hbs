@@ -32,7 +32,12 @@
     </form>
   </nav>
 <h1>{{ article.title }}</h1>
-<h2>{{ article.author }}</h2>
+      {{#if article.author}}
+    <h2>By {{ article.author }}</h2>
+     {{else}}
+     <h2>By Anonymous</h2>
+      {{/if}}
+
 
 {{!-- <img src="{{ article.image }}" alt="">
 

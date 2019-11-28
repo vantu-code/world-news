@@ -69,6 +69,10 @@ router.delete('/delete/:favoriteId', (req, res ,next)=>{
 })
 
 
+
+
+
+
 // GET '/favorites'
 router.get('/', (req, res, next) => {
   favoritesArray = [];
