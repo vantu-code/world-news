@@ -21,32 +21,36 @@
      <button class="article-btns" type='submit'><h1 style="font-size:1.5rem;">{{this.title}}</h1></button>
      <br>
      {{#if this.urlToImage}}
-     <button class="article-btns article-img" style="display: block; float: left; cursor:pointer" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px;" src="{{this.urlToImage}}" alt=""></button>
+     <button class="article-btns article-img" style="display: block; float: left; cursor:pointer; margin-top: -8px;" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px;" src="{{this.urlToImage}}" alt=""></button>
         <br>
         {{else}}
-        <button class="article-btns article-img" style="display: block; float: left; cursor:pointer" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px;" src="/images/One-news.png" alt=""></button>
+        <button class="article-btns article-img" style="display: block; float: left; cursor:pointer; margin-top: -8px;" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px;" src="/images/One-news.png" alt=""></button>
         <br>
         {{/if}}
 
       {{#if this.author}}
-     <button class="article-btns" type='submit'><h2>By {{this.author}}</h2></button>
+     <button class="article-btns" type='submit' style="display: block;
+    margin: 0px auto;padding-top:10px;"><h2 >By {{this.author}}</h2></button>
+      </n>
      {{else}}
-     <button class="article-btns" type='submit'><h2>By Anonymous</h2></button>
+     <button class="article-btns" type='submit' style="display: block;
+    margin: 0px auto; padding-top:10px;"><h2 >By Anonymous</h2></button>
+      </n>
       {{/if}}
 
       {{#if this.source.name}}
-     <button class="article-btns" type='submit'><span> Source: {{this.source.name}}</span></button>
-     <br>
+     <button class="article-btns" type='submit' style="margin-bottom:10px;"><span style="font-size:12px;"><b>Source: {{this.source.name}}</b></span></button>
+      </n>
       {{else}}
-      <button class="article-btns" type='submit'><span> Source: Unknown</span></button>
-     <br>
+      <button class="article-btns" type='submit'><span style="font-size:12px"> <b>Source: Unknown</b></span></button>
+     </n>
      {{/if}}
 
 
-     <button class="article-btns" style="width:60%;" type='submit'><p >{{this.description}}</p></button>
+     <button class="article-btns" style="max-width:75%;" type='submit'><p >{{this.description}}</p></button>
    </form>
 
-   <form class="favorite-form" action='/home/add-to-favorite' style="padding:10px 5px; margin-top:-65px;" method='POST'>
+   <form class="favorite-form" action='/home/add-to-favorite' style="padding:10px 5px; margin-top:-60px;" method='POST'>
     
      <input type='text'  style="display:none;" name='title' value="{{this.title}}">
    
@@ -62,11 +66,16 @@
     
      <input type='text' style="display:none;" name='article' value="{{this.content}}">
 
-      <label for=''></label>
+  
      <input type='text' style="display:none;" name='source' value="{{this.source.name}}">
    
+<<<<<<< HEAD
      <button class="add-to-favorite" type='submit' style="background-color:transparent; margin-top:17px;margin-right:4px;"><img src="/images/icons8-like.png"></button>
      <span class="add-to-favorite-hidden" style="background-color:transparent; margin-top:10px;margin:1px auto"><img src="/images/icons8-hearts-filled.png"></span>
+=======
+     <button class="add-to-favorite" type='submit' style="background-color:transparent; margin-top:18px;margin-right:0px;"><img src="images/icons8-like.png"></button>
+     <span class="add-to-favorite-hidden" style="background-color:transparent; margin-top:20px;"><img  src="images/icons8-hearts-filled.png"></span>
+>>>>>>> 73d391cf15ecbc4c6224d635ebce56d431dc3d27
    </form>
 
  
