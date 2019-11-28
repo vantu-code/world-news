@@ -63,14 +63,37 @@ for (let i = 0; i < addButton.length; i++) {
     console.log("yo bro")
   })
 }
-else{
-  removeFavorite[i].addEventListener("click", function (e){
-  e.preventDefault()
-  addButton[i].style.display = 'block';
-  removeFavorite[i].style.display = 'none';
-  })
 }
-}
+
+// for (let i = 0; i < removeFavorite.length; i++) {
+//   if (removeFavorite[i].style.display != 'none'){
+   
+//     removeFavorite[i].addEventListener("click", function (e){
+//       console.log('removeFavorite[i]', removeFavorite[i]);
+//     e.preventDefault()
+//     addButton[i].style.display = 'block';
+//     removeFavorite[i].style.display = 'none';
+
+//     const { favoritetitle } = e.target.dataset;
+
+//     console.log("eeeeeeee", e.target.dataset.favoritetitle);
+//     // const articleToHide = document.getElementById(`favourite-article-${favoriteid}`);
+
+//     axios.delete(`/favorites/delete/delete/${favoritetitle}`)
+//       .then( (response) => {
+//         console.log("sent", response);
+        
+//         if(response.status === 204) {
+//           console.log("deleted ",favoritetitle );
+          
+//           // articleToHide.innerHTML = '';
+//           // articleToHide.style.display = 'none';
+//         }
+//       })
+//       .catch( (err) => console.log(err));
+//   })
+//     }
+//   }
 
 // addButton.addEventListener("click", function (e){
 //   e.preventDefault();

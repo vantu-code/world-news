@@ -144,6 +144,7 @@ router.post("/home/add-to-favorite", (req, res, next) => {
       res.json();
       // res.redirect("/home");
       
+      
     }).catch((err) => {
       
     });
