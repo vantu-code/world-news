@@ -10,10 +10,10 @@
 
 
 
-<article class="article-card container" id="favourite-article-{{this.id}}">
+<article class="article-card2 container" id="favourite-article-{{this.id}}">
 
 
-  <form action='/article' method='POST' style="min-height:35vh; color:black;padding:10px 5px;margin-bottom:15px;">
+  <form action='/article' method='POST' style="min-height:37vh; color:black;padding:10px 5px;margin-bottom:10px;">
    
      <label for=''></label>
      <input type='text'  style="display:none;" name='title' value="{{this.title}}">
@@ -30,33 +30,53 @@
      <label for=''></label>
      <input type='text'  style="display:none;" name='article' value="{{this.content}}">
    
-     <button class="article-btns" type='submit'><h1>{{this.title}}</h1></button>
-     <button class="article-btns article-img" style="width: 30%;display: inline; float: left; cursor:pointer; " type='submit'><img style="width:100%; cursor:pointer;padding:0;" src="{{this.image}}" alt=""></button>
-     <button class="article-btns" type='submit'><h2>{{this.author}}</h2></button>
-     <button class="article-btns" type='submit'><span> source: {{this.source}}</span></button>
-     <button class="article-btns" style="max-width:50%;" type='submit'><p >{{this.description}}</p></button>
+     <button class="article-btns" type='submit'><h1 style="font-size:1.5rem;">{{this.title}}</h1></button>
+     
+{{#if this.image}}
+     <button class="article-btns article-img" style="display: block; float: left; cursor:pointer; margin-top: -8px;" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px; " src="{{this.image}}" alt=""></button>
+        <br>
+        {{else}}
+        <button class="article-btns article-img" style="display: block; float: left; cursor:pointer; margin-top: -8px;" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px; " src="/images/One-news.png" alt=""></button>
+        <br>
+        {{/if}}
+
+      {{#if this.author}}
+     <button class="article-btns" type='submit' style="display: block;
+    margin: 5px auto;"><h2 style="margin-top:5px;">By {{this.author}}</h2></button>
+      
+     {{else}}
+     <button class="article-btns" type='submit' style="display: block;
+    margin: 5px auto;"><h2 style=" margin-top:5px;">By Anonymous</h2></button>
+     
+      {{/if}}
+
+      {{#if this.source}}
+     <button class="article-btns" type='submit'><span style="font-size:12px; margin-top:-20px auto;"> <b style="padding-left:18px;">Source: {{this.source}}</b></span></button>
+     
+      {{else}}
+      <button class="article-btns" type='submit'><span style="font-size:12px;  margin-top:-20px auto;"> <b style="padding-left:18px;">Source: Unknown</b></span></button>
+     <br>
+     {{/if}}
+
+     <button class="article-btns" style="max-width:65%;" type='submit'><p >{{this.description}}</p></button>
    </form>
 
    <form action='/home/add-to-favorite' method='POST'>
    
-     <label for=''></label>
      <input type='text'  style="display:none;" name='title' value="{{this.title}}">
    
-     <label for=''></label>
      <input type='text'  style="display:none;" name='author' value="{{this.author}}">
 
-    <label for=''></label>
      <input type='text'  style="display:none;" name='url' value="{{this.url}}">
 
-     <label for=''></label>
      <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
 
-     <label for=''></label>
      <input type='text' style="display:none;" name='article' value="{{this.content}}">
-   
+    
+     <input type='text' style="display:none;" name='source' value="{{this.source}}">
    </form>
 
-  <a class="article-delete-btn" href="/favorites/delete/{{this.id}}" data-favoriteid="{{this.id}}">Delete this favorite</a>
+  <a class="article-delete-btn" style="margin-top:15px;" href="/favorites/delete/{{this.id}}" data-favoriteid="{{this.id}}"><img style="width:13%;margin-top:0px;margin-bottom:20px;" src="images/icons8-trash.png"></a>
    
 </article>
     {{!-- <button id="add-edit-comment">add/edit comment</button> --}}

@@ -74,28 +74,34 @@ $(document).ready(function () {
       if ($(window).scrollTop() >= 50) {
           $(".navbar").css("background-color", "rgba(13, 12, 19, 0.75)");
           $(".nav-link").css("color", "white");
-          $(".btn-outline-success").css("color", "cornflowerblue");   
-
-          $(".btn-outline-success").css("border-color", "cornflowerblue");   
-
-          $(".containers").css("background-image", "url('../images/One-news.png')");   
-
-          $(".btn-outline-success").css("border-color", "cornflowerblue"); 
-          $(".containers").css("background-image", "url('../images/One-news-white.png')"); 
-
+      
           $(".colored-nav").css("display", "none"); 
           $(".hidden-nav").css("display", "block"); 
           $(".navbar-toggler-icon").css("color", "rgba(255, 255, 255, 0.733)"); 
           $(".navbar-toggler").css("background-color", "rgba(255, 255, 255, 0.733)"); 
+          $(".btn-outline-success").css("background-color", "transparent"); 
+         
+          
+          $(".btn-outline-success").css("color", "cornflowerblue");  
+          $(".btn-outline-success:hover").css("color", "white");    
+        
+          // $(".btn :hover").css("background-color", "cornflowerblue");    
+
+          $(".btn-outline-success").css("border-color", "cornflowerblue"); 
+
+          $(".containers").css("background-image", "url('../images/One-news-white.png')"); 
           
       } else {
           $(".navbar").css("background-color", "white");
           $(".nav-link").css("color", "black");
-          $(".btn-outline-success").css("color", "#28a745");
-          $(".btn-outline-success").css("border-color", "#28a745");
+         
           $(".containers").css("background-image", "url('../images/One-news.png')"); 
           $(".colored-nav").css("display", "block"); 
           $(".hidden-nav").css("display", "none"); 
+          $(".btn-outline-success:hover").css("background-color", "#28a745");  
+          $(".btn-outline-success").css("background-color", "transparent");  
+          $(".btn-outline-success").css("color", "#28a745");
+          $(".btn-outline-success").css("border-color", "#28a745");
          
       }
   });
@@ -199,7 +205,7 @@ if (articleDeleteButtons) {
 //     axios
 //     .post('/profile')
 // })
-// })
+// // })
 
 
 

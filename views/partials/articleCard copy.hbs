@@ -1,0 +1,76 @@
+
+
+<article class="article-card container">
+  <form action='/article' method='POST' style="min-height:35vh; color:black;padding:10px 5px;margin-bottom:15px;">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='title' value="{{this.title}}">
+   
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='author' value="{{this.author}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='url' value="{{this.url}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
+
+     <label for=''></label>
+     <input type='text'  style="display:none;" name='article' value="{{this.content}}">
+   
+     <button class="article-btns" type='submit'><h1 style="font-size:1.5rem;">{{this.title}}</h1></button>
+     <br>
+     {{#if this.urlToImage}}
+     <button class="article-btns article-img" style="display: block; float: left; cursor:pointer" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px;" src="{{this.urlToImage}}" alt=""></button>
+        <br>
+        {{else}}
+        <button class="article-btns article-img" style="display: block; float: left; cursor:pointer" type='submit'><img id="article-img" style=" cursor:pointer;padding:0;display:block;margin-top:15px;" src="/images/One-news.png" alt=""></button>
+        <br>
+        {{/if}}
+
+      {{#if this.author}}
+     <button class="article-btns" type='submit'><h2>By {{this.author}}</h2></button>
+     {{else}}
+     <button class="article-btns" type='submit'><h2>By Anonymous</h2></button>
+      {{/if}}
+
+      {{#if this.source.name}}
+     <button class="article-btns" type='submit'><span> Source: {{this.source.name}}</span></button>
+     <br>
+      {{else}}
+      <button class="article-btns" type='submit'><span> Source: Unknown</span></button>
+     <br>
+     {{/if}}
+
+
+     <button class="article-btns" style="width:60%;" type='submit'><p >{{this.description}}</p></button>
+   </form>
+
+   <form class="favorite-form" action='/home/add-to-favorite' style="padding:10px 5px; margin-top:-65px;" method='POST'>
+    
+     <input type='text'  style="display:none;" name='title' value="{{this.title}}">
+   
+    
+     <input type='text'  style="display:none;" name='author' value="{{this.author}}">
+
+  
+     <input type='text'  style="display:none;" name='url' value="{{this.url}}">
+
+   
+     <input type='text'  style="display:none;" name='image' value="{{this.urlToImage}}">
+
+    
+     <input type='text' style="display:none;" name='article' value="{{this.content}}">
+
+      <label for=''></label>
+     <input type='text' style="display:none;" name='source' value="{{this.source.name}}">
+   
+     <button class="add-to-favorite" type='submit' style="background-color:transparent; margin-top:17px;margin-right:4px;"><img src="images/icons8-like.png"></button>
+     <span class="add-to-favorite-hidden" style="background-color:transparent; margin:17px auto"><img  src="images/icons8-hearts-filled.png"></span>
+   </form>
+
+ 
+
+   
+   
+</article>

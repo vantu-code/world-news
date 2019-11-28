@@ -5,7 +5,7 @@
    
     <form  id="form-container"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
     
-    <input class="form-control mr-sm-2" type='text' name='search' placeholder="search my history">
+    <input class="form-control mr-sm-2" type='text' name='search' placeholder="Search news">
     
     <button class="btn btn-outline-success "type='submit' >Search</button>
     </form>
@@ -26,7 +26,7 @@
   </div>
    <form  id="form-container-mobile"class="form-inline ml-auto mx-auto" id="search-form" action='/home' method='POST'>
     
-    <input class="form-control mr-sm-2" type='text' name='search' placeholder="search my history">
+    <input class="form-control mr-sm-2" type='text' name='search' placeholder="Search news">
     
     <button class="btn btn-outline-success "type='submit'>Search</button>
     </form>
@@ -36,13 +36,17 @@
 <body>
  
 
+<<<<<<< HEAD
 <h4 style="text-align:center;">Hi {{user.username}}</h4>
 
+=======
+<h4 style="text-align:center;margin-top:5px;">Hi {{user.username}}</h4>
+>>>>>>> styles
 {{#if query}}
- <h1 style="text-align:center;">Results for {{query}}</h1>
+ <h1 style="text-align:center;margin-top:15px;">Results for {{query}}</h1>
   <hr>
   {{/if}}
-<div>
+<div  style="margin-top:-15px;">
 
 {{#each articles}}
 {{> articleCard this}}
@@ -51,5 +55,5 @@
 </div>
 </body>
  <footer>
-    <p>&copy 2019</p>
+    <p>Rose & Jonathan &copy 2019</p>
   </footer>
