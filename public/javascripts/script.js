@@ -13,6 +13,7 @@ var profileInputs = document.getElementsByClassName('profile-input');
 var submitProfileEdit = document.getElementById('submit-profile-edit')
 var addFavorite = document.getElementsByClassName('add-to-favorite-hidden');
 var cancelProfileEdit = document.getElementById('edit-profile2');
+var articleDeleteButtons = document.querySelectorAll('.article-delete-btn');
 
 // var navbarImgLight = document.getElementById('colored-nav')
 // var navbarImgDark = document.getElementById('hidden-nav')
@@ -114,26 +115,52 @@ $(document).ready(function () {
 //      }
 //   });
 // });
-editProfile.addEventListener("click", function (e){
-  
 
-  if(profileForm.style.display === 'block'){
-    editProfile.style.display = 'block';
-    cancelProfileEdit.style.display = 'none';
-  profileForm.style.display = 'none';
-  profileLines.style.display = 'block';
- 
-  }
-  else if(profileForm.style.display === 'none'){
-    editProfile.style.display = 'none';
-    cancelProfileEdit.style.display = 'block';
-    profileForm.style.display = 'block';
-    profileLines.style.display = 'none';
+if (editProfile) {
+
+  editProfile.addEventListener("click", function (e){
+    
   
+    if(profileForm.style.display === 'block'){
+      editProfile.style.display = 'block';
+      cancelProfileEdit.style.display = 'none';
+    profileForm.style.display = 'none';
+    profileLines.style.display = 'block';
+   
     }
-    e.preventDefault()
+    else if(profileForm.style.display === 'none'){
+      editProfile.style.display = 'none';
+      cancelProfileEdit.style.display = 'block';
+      profileForm.style.display = 'block';
+      profileLines.style.display = 'none';
+    
+      }
+      e.preventDefault()
+  
+  })
+}
 
-})
+if (articleDeleteButtons) {
+  articleDeleteButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const { favoriteid } = e.target.dataset;
+
+      console.log(e.target.dataset);
+      const articleToHide = document.getElementById(`favourite-article-${favoriteid}`);
+
+      axios.delete(`/favorites/delete/${favoriteid}`)
+        .then( (response) => {
+          if(response.status === 204) {
+            articleToHide.innerHTML = '';
+            articleToHide.style.display = 'none';
+          }
+        })
+        .catch( (err) => console.log(err));
+    })
+  });
+}
 
 // showMoreQueries.addEventListener("click", function (e){
 //   if(allQueries.style.display == 'none'){
@@ -200,3 +227,4 @@ editProfile.addEventListener("click", function (e){
 //     console.log("yo bro")
 // })
 // } );
+
