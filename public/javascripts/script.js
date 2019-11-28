@@ -154,6 +154,7 @@ if (articleDeleteButtons) {
       const { favoriteid } = e.target.dataset;
 
       console.log(e.target.dataset);
+      console.log("target", e.target)
       const articleToHide = document.getElementById(`favourite-article-${favoriteid}`);
 
       axios.delete(`/favorites/delete/${favoriteid}`)
