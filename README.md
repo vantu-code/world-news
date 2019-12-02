@@ -6,7 +6,7 @@
 
 ## Description
 
-Search world news, save articles and get summaries of each article. 
+Search world news and save articles for later. 
 
 
 
